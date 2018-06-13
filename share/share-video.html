@@ -13,7 +13,7 @@
 			overflow-x: hidden
 		}
 		body{
-			overflow-x: hidden
+			background: #fff;
 
 		}
 		body,html,video{
@@ -48,7 +48,7 @@
 			box-shadow: .1rem .5em .8rem .1rem #eee;
 		}
 		hr{
-			background-color: #ccc;
+			background-color: #eee	;
 			height: 1px;
 			border: none;
 
@@ -86,24 +86,6 @@
 			width: 100%;
 			background: #eee;
 		}
-		 
-
-	/* 	li{
-			list-style: none;
-			width: 100%;
-			height: 8rem;		 
-			margin: .3rem 0;
-			padding: 1rem;
-			background: #fff;
-			display: flex;
-	 
-
-		} */
-	/* 	li img{
-			height: 100%;
-			margin-right: 1rem;
- 
-		} */
  
 	</style>
 </head>
@@ -210,6 +192,7 @@
 	</footer>
 
 <script>
+ 
 	 //获取地址参数
 	var hww=function GetRequest() {
 		var url = location.search; //获取url中"?"符后的字串
@@ -318,6 +301,12 @@ function vList(){
 						`
 					})
 			$('.vList').html(list);
+
+			 $(document).on("click","img",function(){
+		 
+			console.log(this)
+ 
+			})	
  
 		},
 		error:function(){
@@ -327,8 +316,9 @@ function vList(){
 
 };
 vList();
-
+//其他视频点击
  
+
 
 
 	//收费视频限制播放
@@ -343,12 +333,10 @@ vList();
 	 	} 
 	}
 
+ 
 
-$(".link ").on("click",function(){
-	console.log(66666666);
-	$(location).attr("href","index.html")
+ 
 
-})
 
  
 
