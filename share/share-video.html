@@ -113,69 +113,7 @@
 	<footer>
 		<h2 style="text-align: center;color:#aaa;">相关视频</h2>
 		<ul class="vList">
-			<!-- <li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li>
-			<li>				 
-					<img src="img/2.jpg" alt="">
-					<div>
-						<h3>123</h3>
-						<p>123</p>
-					</div>	 
-			</li> -->
+		 
 		</ul>
 		<hr>
 		<h3 class="foot-title">答美色彩</h3>
@@ -192,6 +130,7 @@
 	</footer>
 
 <script>
+
  
 	 //获取地址参数
 	var hww=function GetRequest() {
@@ -279,34 +218,36 @@ function vList(){
 						list+=`
 							<li class=" " style="list-style: none;
 								width: 100%;
-								height: 10rem;		 
+								height: 11rem;		 
 								margin: .3rem 0;
 								padding: 1rem;
 								box-sizing: border-box;
 								background: #fff;
 								display: flex;
+								overflow:hidden
 
 							" >
 								<div class="row" style="display: flex; ">
 		 								
-									<img src="${this.img}" alt="" class="link" style="height:100%;width:42%; margin-right:1rem;  "/>							 
+									<img src="${this.img}" alt="" class="link" style="height:100%;width:42%; margin-right:1rem;overflow:hidden  "/>							 
 									<div class="link"  style="width:50%;  ">
 										 
 										 <h3>${this.title}</h3>
-										 <p style="overflow: hidden; ">${this.subtitle}</p>
+										 <p style="overflow: hidden; " >${this.subtitle}</p>
 									</div>
 								 
 								</div>
 							</li>
 						`
+ 
+
 					})
 			$('.vList').html(list);
 
-			 $(document).on("click","img",function(){
 		 
-			console.log(this)
- 
-			})	
+
+			 	
+				// 
  
 		},
 		error:function(){
@@ -336,8 +277,10 @@ vList();
  
 
  
+	
 
-
+ 
+ 
  
 
 </script>	
