@@ -3,18 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-	<title>答美色彩教育</title>
+	<title>答美色彩</title>
 	<script src="js/jquery.js"></script>
 
 	<style>
 		html{
-			font-size: 62.5%;
-			
+			font-size: 62.5%;			
 			overflow-x: hidden
 		}
 		body{
 			background: #fff;
-
 		}
 		body,html,video{
 			width: 100%;
@@ -23,7 +21,8 @@
 			padding: 0;
 		}
 		header{
-			margin-top: 60%;
+			margin-top: 70%;
+		/* margin-bottom: 10rem; */
 		}
 		.header{
 			position: fixed;
@@ -62,12 +61,20 @@
 		.ti2T img{
 			width: 35%;
 		}
-		h2,h3{
+		h2{
 			color: #666;
-
+			font-size: 1.6rem;
+		}
+		h3{
+			color: #666;
+			margin-bottom: -1rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 		p{
 			color: #888;
+			font-size: 1.2rem;
 
 		}
 		footer{
@@ -85,6 +92,10 @@
 			padding: 0;
 			width: 100%;
 			background: #eee;
+		}
+		.vList img{
+			pointer-events: none;
+
 		}
  
 	</style>
@@ -211,7 +222,6 @@ function vList(){
 		dataType:"json",
 		contentType: 'application/json',
 		success:function(data){
-			console.log(data.data);
 			var data=data.data.data;
 			var list="";
 			$.each(data,function(index,obj){
@@ -227,10 +237,12 @@ function vList(){
 								overflow:hidden
 
 							" >
-								<div class="row" style="display: flex; ">
-		 								
-									<img src="${this.img}" alt="" class="link" style="height:100%;width:42%; margin-right:1rem;overflow:hidden  "/>							 
-									<div class="link"  style="width:50%;  ">
+								<div class="row" style="display: flex;width:100% ">
+		 							 
+		 								<img src="${this.img}" alt="" class="link" style="height:9rem;width:42%; ; margin-right:1rem;overflow:hidden;border-radius:2px  "/>
+ 
+																 
+									<div class="link"  style="width:50%;   ">
 										 
 										 <h3>${this.title}</h3>
 										 <p style="overflow: hidden; " >${this.subtitle}</p>
@@ -239,16 +251,12 @@ function vList(){
 								</div>
 							</li>
 						`
- 
+ 	 
 
 					})
 			$('.vList').html(list);
 
-		 
-
-			 	
-				// 
- 
+	 
 		},
 		error:function(){
 			console.log("失败")
@@ -258,9 +266,7 @@ function vList(){
 };
 vList();
 //其他视频点击
- 
-
-
+  
 
 	//收费视频限制播放
 	 function start(){
@@ -273,11 +279,12 @@ vList();
 	 
 	 	} 
 	}
-
  
 
- 
-	
+$(document).on('click', $(".vList li") ,function(){
+	window.location.href="https://www.pgyer.com/ti2T"
+
+})
 
  
  

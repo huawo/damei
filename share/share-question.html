@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>答美色彩</title>
+	<script src="js/jquery.js"></script>
+	<style>
+	html{
+		font-size: 62.5%;
+		
+	}
+	html,body{
+		margin: 0;
+		padding: 0;
+		width:100%;
+		height: 100%;
+		background: #fff;
+	}
+	body{
+		background: #Fff;
+		font-size: 1.4rem;
+	}
+	header,.head,.info,.btn{
+		width: 100%;
+
+	}
+	header{
+	/* 	height: 20rem; */
+		background: #fff;
+		padding: 1rem;
+		box-sizing: border-box;
+		/* box-shadow: .1rem -0.8rem 1rem .5rem #aaa; */
+		box-shadow: .1rem .6rem 1rem .1rem #ddd;
+	}
+	.info{
+		display: flex;
+
+	}
+	.info img{
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+	}
+	.info p{
+		flex: 9;
+		margin: 0 ;
+		margin-left: 1rem;
+		line-height: 3.5rem;
+	}
+	.info span{
+		flex: 3;
+		line-height: 3.5rem;
+		color: #CC3333 ;
+		text-align: center;
+
+	}
+	.head .title{
+		/* height: 3rem; */
+	}
+	.title h2{
+		/* overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap; */
+		font-size: 1.6rem;
+		margin-bottom: 1rem;
+	 
+	}
+
+	.btn{
+		/* height: 3rem; */
+		margin-top: 3rem;
+	}
+	.btn .an{
+		width: 8rem;
+		height: 3rem;
+		background: url("img/login.png");
+		background-size: 8rem 3rem;
+		color: #fff;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 3rem;
+		border-radius: .2rem;
+		
+	}
+	.an p{
+		letter-spacing: .4rem;
+		padding-left: .6rem;
+	}
+	.btn .time{
+		display: block;
+		color: #888;
+		margin-top: 1rem;
+		text-align: center;
+	}
+
+	main{
+		width: 100%;
+		height: 50rem;
+		margin-top: 1rem;
+		background: #fff;
+		padding: 1rem;
+		box-sizing: border-box;
+	}
+	main h2{
+		font-weight: normal;
+		font-size: 1.6rem;
+		color: #666;
+	}
+	.ulQs{
+		margin: 0;
+		padding: 0;
+	}
+	.ulQs li{
+		list-style: none;
+		border-bottom: 1px solid #efefef;
+	}
+	.liHead{
+		display: flex;
+		height: 3.5rem;
+	}
+	.liHead .liImg{
+		 width: 3.5rem;
+		 height: 3.5rem;
+		 padding: 0;
+		 margin: 0;
+ 
+	}
+	.liImg img{
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+
+	}
+	.liHead .liName{
+		width: 100%;
+		height: 3.5rem;
+		margin-left: 1rem;
+	}
+	.liName p{
+		line-height: 3.5rem;
+		margin: 0;
+		font-weight: bold;
+	}
+	.liCont {
+		color: #444;
+		margin-left: 4.5rem;
+		padding-right: 1rem;
+		box-sizing: border-box;
+	}
+	.liMp{
+		margin-left: 4.5rem;
+
+	}
+	.mmp{
+		width: 15rem;
+		height: 3rem;
+		margin-bottom: 1.4rem;
+		background: url('img/voice_button@2x.png');
+		background-size: 15rem 3rem;
+	}
+
+	.liCont p{
+		margin-top: 0;
+		line-height: 2rem;
+	}
+	.liFoot{
+		display: flex;
+		margin-left: 4.5rem;
+		color: #888;
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+	.liFoot .liTime{
+		flex: 10;
+
+	}
+	.liFoot .liGood{
+		flex: 1;
+	}
+	.gdimg{
+		flex: 1;
+		height: 1.5rem;
+		background: url('img/agree_ico.png') no-repeat;
+		background-size:1.5rem 1.5rem;
+ 		margin-top: -.3rem;
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<div class="head">
+			<div class="info">
+				<img src="" alt="">
+				<p></p>
+				<span></span>
+			</div>
+			<div class="title">
+				<h2></h2>
+			</div>
+		</div>
+		<div class="btn">
+			<div class="an" ><p>抢答</p></div>
+			<span class="time"></span>
+		</div>
+	</header>
+	<main>
+		<h2>回复详情</h2>
+		<ul class="ulQs">
+			<li></li>
+			<li></li>
+		</ul>
+	</main>
+
+
+
+
+<script>
+
+	var searchUrl =window.location.href; 
+	var searchData =searchUrl.split("=");       
+	var  searchText =decodeURI(searchData[1]);   //decodeURI解码  
+	console.log(searchText);
+	function qsInfo(){
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/questionInfo?questionId="+searchText,
+			type:"get",
+			dataType:"json",
+			contentTyoe:"application/json",
+			success:function(data){
+				var data=data.data;
+				console.log(data)
+				$(".info img").attr('src',data.headImg);
+				$(".info p").html(data.nickname);
+				$(".info span").html('赏金&nbsp¥&nbsp'+data.reward);
+				$(".title h2").html(data.content );
+				$(".btn .time").html(data.subTime)
+
+
+			},
+			error:function(){
+				console.log(2)
+			}
+
+		})
+	}
+	qsInfo();
+
+
+	function list(){
+		var data=JSON.stringify({
+			questionId:searchText,
+			pageNum:1,
+			pageSize:20,
+		})
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/answerList",
+			type:"post",
+			data:data,
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data.data;
+				var list='';
+
+				$.each(data,function(index,obj){
+					var d=this.careateTime;
+					function add(){
+						//补0
+						function p(s){
+							return s<10?'0'+s:s;
+						};
+
+						var dtime=function( ){
+							var ntime=new Date(d);
+							var month=ntime.getMonth()+1;
+							var day=ntime.getDate();
+							var str= p(month)+'-'+p(day);
+							return str
+						}
+						// dtime();
+						return dtime(); 
+					}
+					var caTime=add();
+					console.log( add());
+					// 判断是否为语音
+					console.log(this.type);
+					if (this.type==1) {
+						list+=`
+						<li>
+							<div class="liHead">
+								<div class="liImg">
+									<img src="${this.headImg}" alt="" />
+								</div>
+								<div class="liName">
+									<p>${this.nickname}</p>
+								</div>
+							</div>
+							<div class="liCont">
+								<p>${this.content}</p>
+
+							</div>
+							<div class="liFoot">
+								<span class="liTime">${caTime}</span>
+								<span class="gdimg"></span>
+								<span class="liGood">${this.goodNum}</span>
+							</div>
+
+
+
+						</li>
+					`
+
+					}else{
+						list+=`
+						<li>
+							<div class="liHead">
+								<div class="liImg">
+									<img src="${this.headImg}" alt="" />
+								</div>
+								<div class="liName">
+									<p>${this.nickname}</p>
+								</div>
+							</div>
+							<div class="liMp">
+								<div class="mmp">
+									<audio src="${this.voice}"></audio>
+								</div>
+
+							</div>
+							<div class="liFoot">
+								<span class="liTime">${caTime}</span>
+								<span class="gdimg"></span>
+								<span class="liGood">${this.goodNum}</span>
+							</div>
+
+
+
+						</li>
+					`
+
+					}
+				  
+					
+					
+				})
+				$(".ulQs").html(list);
+				 
+			},
+			error:function(){
+				console.log(2)
+			}
+		})
+	}
+	list();
+
+
+	$(document).on("click",".mmp",function(){
+	 	var ho=$(this).children("audio")[0].play();
+ 	
+	 	// console.log(ho);
+	 	// ho[0].play(); 
+	})
+
+	
+</script>	
+</body>
+</html>

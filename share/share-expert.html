@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>答美色彩</title>
+	<script src="js/jquery.js"></script>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+/* 			background: #aaa; */
+
+		}
+		html{
+			font-size: 62.5%;
+			background: #fff;
+		}	
+		body{
+			font-size: 1.4rem;
+			color: #555;
+		
+
+		} 
+		header,.info,.infoTop,.infoB,{
+			width:100%；
+		}
+		header{
+			height: 18rem;
+			padding: 1rem;
+			box-sizing: border-box;
+ 			box-shadow:.1rem .6rem 1rem .1rem #ddd;
+		}
+		.info{
+			height: 100%;
+
+		}
+		.infoTop{
+			height: 5rem;
+			display: flex; 
+		}
+		.star{
+			margin-top: .6rem;
+			width: 7.5rem;
+			height: 1.5rem;
+			background:url(img/ranking.png) repeat-x ;
+			background-size: 1.5rem 1.5rem;
+			color: red;
+		}
+		.topImg{
+			height:5rem;
+			width: 5rem;
+
+		}
+		.topImg img{
+			height: 100%;
+			width: 100%;
+			border-radius: 50%;
+		}
+		.infoName{
+			height: 5rem;
+			margin-left: 1rem;
+		/* 	display: flex; */
+			/* flex-direction: column; */
+		}
+		.infoName h2{
+			margin: 0;
+			color: #666;
+			font-size: 1.8rem;
+			margin-bottom: .2rem;
+		}
+		.infoName span{
+			font-size: 1.2rem;
+			color: #888;
+
+		}
+		.infoB p{
+			display: block;
+			position:relative;
+			line-height:2rem;
+			max-height:6rem;
+			overflow:hidden;
+			font-size: 1.2rem;
+			text-indent: 2rem;
+		}
+		.infoB p:after {
+			font-size: 1.2rem;
+			/* font-size: 3rem; */
+			content: "\02026";       
+			position:absolute; 
+			bottom:0;
+			right:.1rem;
+			padding-left: 3rem;
+			padding-right: 1rem;
+			background:-webkit-linear-gradient(left,transparent,#fff 55%);
+			background:-o-linear-gradient(right,transparent,#fff 55%);
+			background:-moz-linear-gradient(right,transparent,#fff 55%);
+			background:linear-gradient(to right,transparent,#fff 55%);
+		}
+		main{
+			width: 100%;
+			margin-top: 1rem;
+			padding-top: 1rem;
+			background:#fff;
+			z-index: 1;
+			/* border-top: 1px solid #eee; */
+ 
+		}
+		main h2{
+			margin: 0;
+			margin-left: 2rem;
+			/* font-weight: normal; */
+			color: #666;
+		}
+		.ulmain{
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			padding: 1rem  1rem 1rem 2rem;
+			box-sizing: border-box;
+
+		}
+		.ulmain li {
+			list-style: none;
+			width: 100%;		
+			display: flex;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid #efefef;
+		}
+		.imgs{
+			width: 100%;
+			height: 5rem;
+		} 
+		.imgs .headImg{
+			width: 3.5rem;
+			height: 3.5rem;
+			border-radius:50%;
+		}
+		.imgs .more{
+			width:15rem;
+			height: 3rem;
+		}
+		.tiez{
+			width: 100%;
+		}
+		.foot{
+			width: 100%;
+			display: flex;
+ 
+		}
+		.foot p{
+			font-size: 1rem;
+			color: #888;
+			flex: 8;
+
+		}
+		.foot .fl{
+			flex: 4;
+			width: 12rem;
+			height: 1.3rem;
+			margin: 1rem 0;
+			display: flex;
+	  
+		}
+		.fl span{
+			height: 100%;
+			color: #888;
+			font-size: 1rem;
+			margin: 0;
+		}
+		.fl i{
+			display: inline-block; 
+			height: 1.3rem;
+			background: url('img/agree_ico.png') no-repeat ;
+			background-size: 1rem;
+			flex: 1.5;
+
+		}
+		.isGood{
+			height: 1.3rem;
+			line-height: 1.3rem;
+			flex: 3;
+
+		}
+		.lookNum{
+			flex: 7.5;
+ 
+		}
+		img{
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="info">
+			<div class="infoTop">
+				<div class="topImg">
+					<img src=" " alt="">
+				</div>
+				<div class="infoName">
+					<h2> </h2>
+					<span> </span>
+				</div>
+				<div class="star"></div>
+			</div>
+			<div class="infoB">
+				<p> </p>
+			</div>
+		</div>
+	</header>
+	<main>
+		<h2>问答</h2>
+		<ul class="ulmain">
+		 
+		</ul>
+		
+	</main>
+<script>
+	var searchUrl =window.location.href; 
+	var searchData =searchUrl.split("=");       
+	var  searchText =decodeURI(searchData[1]);   //decodeURI解码  
+	console.log(searchText);
+	//专家信息
+	function expert(){
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/expertInfo?expertId="+searchText,
+			type:"get",
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data;
+				console.log(data);
+				$(".topImg img").attr("src",data.headImg);
+				$(".infoName h2").html(data.nickname);
+				$(".infoName span").html(data.answerNum+'个回答，'+data.concernNum+'关注');
+				$(".infoB p").html(data.profile);
+
+
+
+			},
+			error:function(){
+				console.log(2)
+			}
+
+		})
+	};
+	expert();
+
+	// 问答
+	function ask(){
+		var data=JSON.stringify({
+			pageSize:1,
+			pageNum:10,
+			expertId:searchText,
+		})
+		 
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/caseList" ,
+			type:"post",	
+			data:data,	 
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data.data;
+				console.log(data);
+				var list="";
+				$.each(data,function(index,obj){
+					list+=`
+						<li>
+							<div class="tiez">
+								<div class="tTitle">
+									<p>${this.questionContent}</p>
+								</div>
+								<div class="imgs">
+									<img class="headImg" src="${this.headImg}" alt="" />
+									<img class="more" src="img/voice_button1.png" alt="" />
+								</div>						 
+								<div class="foot">
+									<p>${this.careateTime}</p>
+									<div class="fl">
+										<i></i>
+										<span class="isGood">${this.isGood} </span>
+										<span class="lookNum">听过&nbsp;&nbsp${this.lookNum}</span>
+									</div>
+									
+								</div>
+							</div>
+						</li>
+
+					`
+				})
+				$(".ulmain").html(list);
+
+			},
+			error:function(){
+				console.log(2)
+			}
+
+		})
+	}
+	ask();
+
+	$(document).on("click",".ulmain li",function(){
+		window.location.href="https://www.pgyer.com/ti2T"
+	})
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>答美色彩</title>
+	<script src="js/jquery.js"></script>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+/* 			background: #aaa; */
+
+		}
+		html{
+			font-size: 62.5%;
+			background: #fff;
+		}	
+		body{
+			font-size: 1.4rem;
+			color: #555;
+		}
+		header,.head,.tit,.teacher,.ulSpeak{
+			width: 100%;
+		}
+		.head{
+			height: 31rem;
+			box-shadow: .1rem .6rem 1rem .1rem #ddd;
+
+		} 
+		.bgi{
+			height: 25rem;
+			overflow-y: hidden;
+			position: relative
+		 
+		}
+		.bgi img{
+			width: 100%;
+
+
+		}
+		.hlei{
+			color: #fff; 
+			position: absolute;
+			bottom: 5%;
+			left: 5%;
+		}
+		.tlei{
+			color: #fff; 
+			position: absolute;
+			bottom: 5%;
+			left: 25%;
+			border: 1px solid #fff;
+			border-radius: .5rem;
+			padding: 0 .3rem;
+		}
+		.tit{
+			height: 6rem;
+			padding:1rem;
+			box-sizing: border-box;			
+		}
+		.tit .teach{
+			font-weight: bold;
+			color: #333;
+			margin: 0;
+		/* 	width: 300px; */
+			overflow:hidden;
+			text-overflow:ellipsis;
+			white-space:nowrap
+		}
+		.tit .tname{
+			color: #888;
+			font-size: 1.2rem;
+		}
+
+		.ulSpeak{
+			margin: 0;
+			padding: 0
+		}
+		.ulSpeak li{
+			width: 100%;
+			list-style: none;
+			/* height:3rem; */
+			padding: 1rem;
+			box-sizing: border-box;
+			border-bottom: 1px solid #efefef;
+		}
+		section{
+			padding: 1rem ;
+			box-sizing: border-box;
+		/* 	border-top: 1px solid #fff; */
+			background: #fff;
+			margin-top: 1rem;
+		}
+		section h2,footer h2{
+			font-weight: normal
+		}
+		.binfo{
+			display: flex;
+		}
+		.bTitle{
+			flex: 8;
+			margin: 0;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		.ulSpeak li:first-child .bTitle:before{
+			text-align: center;
+			line-height: 1.9rem;
+			content: "试听";
+			padding: 0 .5rem;
+			margin-right: .5rem;
+			color: #fff;
+			width: 4rem;
+			height: 1.9rem;
+			background: #00CCCC;
+			border-radius: 3px;  
+			/* position:absolute; 
+			bottom:0;
+			left:-20%; */
+
+		}
+		.hold{
+			flex: 1;
+			 
+		}
+	 
+		.bRead{
+			flex: 3;
+		}
+		footer{
+			padding: 1rem;
+			box-sizing: border-box;
+		}
+		.circle{
+			wdiht: 100%;
+			background: red;
+		}
+		.circle li{
+			list-style: none;
+		}
+	</style> 
+</head>
+<body>
+	<header>
+		<div class="head">	
+			<div class="bgi">
+				<img src="" alt="">
+				<span class="hlei"> </span>
+				<span class="tlei"></span>
+			</div>	 
+			
+			<div class="tit">
+				<p class="teach"> </p>
+				<span class="tname"> </span>
+			</div>
+		</div>
+		
+	</header>
+	<section>
+		<h2>讲单</h2>
+		<ul class="ulSpeak">
+			 
+		</ul>
+		
+	</section>
+	<!-- <footer>
+		<h2>互动圈</h2>
+		<ul class="circle">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+	</footer> -->
+
+
+<script>
+	var searchUrl =window.location.href; 
+	var searchData =searchUrl.split("=");       
+	var  searchText =decodeURI(searchData[1]);   //decodeURI解码  
+	console.log(searchText);
+	// //评论
+	// function circleList(){
+	// 	var datas=JSON.stringify({
+	// 		speakId:1,
+	// 	})
+	// 	$.ajax({
+	// 		url:"http://139.224.208.224/damei-app/share/circleList",
+	// 		type:"post",
+	// 		data:datas,
+	// 		dataType:"json",
+	// 		contentType:"application/json",
+	// 		success:function(data){
+	// 			console.log(data)
+	// 		},
+	// 		error:function(){
+	// 			console.log(2)
+	// 		}
+	// 	})
+
+
+	// }
+	// circleList();
+
+
+	function nickName(){
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/speakInfo?sId="+searchText,
+			type:"get",
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data;
+				console.log(data);
+		 
+				$(".bgi img").attr("src",data.headImg);
+				$(".bgi .hlei").html( data.participantNum+'人参加' );
+				$(".bgi .tlei").html( data.typename  );
+				$(".teach").html( data.title  );
+				$(".tname").html( data.nickName+'&nbsp|&nbsp'+ data.theme  );
+				$(".bgi .tlei").html( data.typename  );
+			},
+			error:function(){
+				console.log(2)
+			}
+		})
+
+	}
+	nickName();
+
+	function list(){
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/billList?sId="+searchText,
+			type:"get",
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data;
+				console.log(data);
+				var list="";
+				$.each(data,function(index,obj){
+					list+=`
+						<li>
+							<div class="binfo">
+								<p class="bTitle">${this.bTitle}</p>
+								<span class="hold"></span>
+								<span class="bRead">阅读量：${this.lookNum}</span>
+							</div>
+						</li>
+					`
+				})
+				$(".ulSpeak").html(list);
+
+			},
+			error:function(){
+				console.log(2)
+			}
+		})
+	}
+	list();
+
+
+	$( document ).on('click','.ulSpeak li',function(){
+		 window.location.href="share-speak-link.html?sId="+ searchText;
+	})
+</script>	
+</body>
+</html>

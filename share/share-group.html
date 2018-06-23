@@ -8,19 +8,27 @@
 	<style>
 	html{
 		font-size: 62.5%;
-		
+
 	}
 	html,body{
 		margin: 0;
 		padding: 0;
 		width:100%;
 		height: 100%;
+		background: #fff;
 
 	}
 	header{
 		width: 100%;
-		height: 40%;
+		height: 30rem;
 		background: #ddd;
+		overflow: hidden; 
+	}
+	header img{
+		/* width: 100%; */
+
+		overflow-y: hidden;
+
 	}
 	footer{
 		position: fixed;
@@ -28,7 +36,7 @@
 		width: 100%;
 	}
 	.footBtn{
-		/* width: 100%; */
+		width: 100%;
 		height: 5rem;
 		background: #aaa;
 		display: flex;
@@ -43,41 +51,137 @@
 		background: #fff;
 	}
 	.footBtn div a{
-		color: #666;
 		line-height: 5rem;
 		font-size: 1.6rem;
 		display: block;
 		text-decoration: none;
 		text-align: center;
 	}
+	main{
+		/* background: red; */
+		box-sizing: border-box;
+		padding: 1rem;	
+	}
+	
+	.groupImg{
+		width: 100%;
+		height: 100%;
 
+	}
+	.groupImg img{
+		width: 100%;
+		/* height:100%; */
+	}
+	.gTitle{
+		color: #fff;	 
+		position: absolute;
+		top: 20rem;
+		left: 10%; 
 
+	}
+	.gTitle .group-title{
+		font-size: 2.2rem;
+		margin-bottom: 0;
+	}
+	.gTitle .group-name{
+		font-size: 1.8rem;		
+		margin-top:.5rem;
+	}
+	.bay{
+		background: url('img/login.png') no-repeat ;
+		background-size: 100%;
+
+	}
+	.test a{
+		color: #666;
+		border-top: 1px solid #ddd;
+		box-sizing: border-box;
+	}
+	.bay a{
+		color: #fff;
+
+	}
+	main p{
+		font-size: 1.4rem;
+		line-height: 1.5;
+		text-indent: 3rem
+	}
 		
 	</style> 
 </head>
 <body>
 	<header>
+		<div class="groupImg" >
+			<img src=" " alt="">
+			<div class="gTitle">
+				<h2 class="group-title"> </h2>
+				<p class="group-name"> </p>
+			</div>
+			
+		</div>
+		
 		
 	</header>
+	<main>
+		<p> </p>
+ 
+	</main>
 
 	<footer>
 		<div class="footBtn"> 
-			<div><a href="">抢先体验</a></div>
-			<div><a href="">入社吧</a></div>
+			<div class="test"><a href="share-group-test.html">抢先体验</a></div>
+			<div class="bay"><a href="">打开&nbspApp&nbsp入社吧</a></div>
 		</div>
 	</footer>
 
 
 
 
-
+<!-- ?nickname=datas.nickname -->
 
 
 <script>
-	
-	$(function(){
-		alert();
-	})
+
+//获取参数	
+var searchUrl =window.location.href; 
+var searchData =searchUrl.split("=");       
+var  searchText =decodeURI(searchData[1]);   //decodeURI解码  
+console.log(searchText);
+
+$.ajax({
+	url:"http://139.224.208.224/damei-app/share/getDetailOfCommunity?cId="+searchText ,
+	type:"get",
+
+	dataType:"json",
+	contentType: 'application/json',
+		success:function(data){
+			var datas=data.data;
+			console.log(datas.headImg);
+			$(".groupImg img").attr('src',datas.headImg);
+			$(".group-title").html(datas.theme);
+			$(".group-name").html(datas.nickname);
+			$("main p").html(datas.content);
+			var nickname=datas.nickname;
+			var cId=datas.cId;
+			console.log(cId);
+			//console.log(nickname);
+			// var searchText= jQuery.trim(nickname);  
+			// 	console.log(searchText);
+		   var searchUrl =encodeURI("share-group-test.html?nickname="+nickname+"&cId="+cId);   //使用encodeURI编码  
+
+		   console.log(searchUrl);
+			$(".test a").attr("href",searchUrl);
+
+ 
+   // window.location.href =searchUrl;  
+
+	 
+		},
+		error:function(){
+			console.log("失败")
+		}
+	});
+
 </script>	
 </body>
 </html>

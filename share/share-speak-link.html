@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>答美色彩</title>
+	<script src="js/jquery.js"></script>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+/* 			background: #aaa; */
+
+		}
+		html{
+			font-size: 62.5%;
+	
+		}	
+		body{
+			font-size: 1.4rem;
+			color: #555;
+		}
+		
+		header{
+			width: 100%;
+			height: 40rem;
+			overflow: hidden;
+			background: #666;
+		}
+	 	main{
+	 		width: 100%;
+	 	 
+	 /* 		background: red; */
+	 	}
+	 	audio{
+			width: 100%;
+			 
+			background: rgba(0, 0, 0,0.9);
+		}
+		.banner{
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+			height:90%;
+		}
+		.banner .bgImg{
+			width: 100%;
+			height: 100%;
+			-webkit-filter: blur(10px); /* Chrome, Safari, Opera */
+			-moz-filter: blur(10px);
+			-o-filter: blur(10px);
+  			filter: blur(10px);
+		}
+		.sm{
+			width: 60%;
+			height: 60%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 999;
+			background: rgba(0,0,0,0.2);
+			box-shadow: .1rem .5rem 3rem 1rem #333;
+			border-radius: 2px;
+		}
+		.banner .zz{
+			width: 100%;
+			height: 100%;
+			background:rgba(0,0,0,0.2);
+			display: block;
+			position: absolute;	
+			z-index: 1;
+		}
+		.smImg{
+			height: 100%;
+			width: 100%;
+			border-radius: 2px;
+
+		}
+		/* _________________________________ */
+		footer{
+			width: 100%;
+		}
+		.ulSpeak{
+			margin: 0;
+			padding: 0
+		}
+		.ulSpeak li{
+			width: 100%;
+			list-style: none;
+			/* height:3rem; */
+			padding: 1rem;
+			box-sizing: border-box;
+			border-bottom: 1px solid #efefef;
+			
+		}
+		.binfo{
+			display: flex;
+		}
+		.bTitle{
+			flex: 7;
+			margin: 0;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		.hold{
+			flex: 2;
+		}
+		.ulSpeak li:first-child .bTitle:before{
+			text-align: center;
+			line-height: 1.9rem;
+			content: "试听";
+			padding: 0 .5rem;
+			margin-right: 0.5rem;
+			color: #fff;
+			width: 4rem;
+			height: 1.9rem;
+			background: #00CCCC;
+			border-radius: 3px;  
+
+		}
+		.bRead{
+			flex: 3;
+		}
+
+		/* -___________________ */
+		.fwb{
+			line-height: 3rem;
+			margin-top: 8rem;
+			text-indent:3rem;
+			font-size: 1.4rem;
+		}
+		.fwb img{
+			width:100% !important;
+			height: auto !important;
+			margin: 1rem 0 !important;
+			line-height: 6rem !important;
+
+		}
+	</style>
+</head>
+<body>
+	<header>
+	  	<div class="banner">
+	  		<div class="sm">	  			
+	  			<img class="smImg" src="" alt="">
+	  		</div>
+			<span class="zz"></span>
+	  		<img class="bgImg" src="" alt="">	
+	  	</div>
+	 
+	 <main>
+		<audio src="img/ten.mp3" controls="controls"/>Your browser does not support the audio tag.</audio>	
+	</main>
+	</header>
+	
+	<footer>
+
+		<ul class="ulSpeak">
+		
+		</ul>
+	</footer>
+	
+
+<script>
+	var searchUrl =window.location.href; 
+	var searchData =searchUrl.split("=");       
+	var  searchText =decodeURI(searchData[1]);   //decodeURI解码  
+	console.log(searchText);
+
+	//讲单详情
+	function bill(){
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/billInfo?bId="+searchText,
+			type:"get",
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data;
+				console.log(data);
+				console.log(data.type);
+				if(data.type==1){
+					$("header").css("height",'auto');
+					console.log("text");
+					var list="";
+					list+=`
+							<div class="twMain" style="width:100%;height:100%;background:#fff;padding:1rem;box-sizing:border-box;">
+								<div class="twhead">
+									<h2 style=" font-size:1.6rem; margin-bottom:.5rem;">${data.title}</h2>
+									<span style="margin:0;color:#888">${data.nickname}</span>
+									<div class="fwb" >${data.content}</div>
+									
+								</div>
+
+
+
+
+
+
+
+							</div>
+						`
+				 	
+					$("header").html(list)
+
+				}else{
+					console.log("yin");
+					$("main audio").attr("src",data.voice)
+
+				}
+			},
+			error:function(){
+				console.log(2)
+			}
+		})
+
+	};
+	bill();
+
+	function nickName(){
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/speakInfo?sId="+searchText,
+			type:"get",
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data;
+				//console.log(data);
+		 
+				$(".banner .bgImg").attr("src",data.headImg);
+				$(".smImg").attr("src",data.headImg);
+				 
+			},
+			error:function(){
+				console.log(2)
+			}
+		})
+
+	}
+	nickName();
+
+	function list(){
+		$.ajax({
+			url:"http://139.224.208.224/damei-app/share/billList?sId="+searchText,
+			type:"get",
+			dataType:"json",
+			contentType:"application/json",
+			success:function(data){
+				var data=data.data;
+				//console.log(data);
+				var list="";
+				$.each(data,function(index,obj){
+					list+=`
+						<li>
+							<div class="binfo">
+								<p class="bTitle">${this.bTitle} </p>
+								<span class="hold"></span>
+								<span class="bRead">阅读量：${this.lookNum}</span>
+							</div>
+						</li>
+					`
+				})
+				$(".ulSpeak").html(list);
+
+			},
+			error:function(){
+				console.log(2)
+			}
+		})
+	}
+	list();
+	
+	
+
+	$( document ).on('click','.ulSpeak li',function(event){
+		 	  
+		 window.location.href="https://www.pgyer.com/ti2T" 
+		 
+	})
+
+</script>	 
+</body>
+</html>
+
+	
+<!-- "东风是塞阀<br/>
+<img src=\"http://ou5331fwu.bkt.clouddn.com/9fpjmkzhk6k05ojiuyzo7p66r.jpg\" id=\"http://ou5331fwu.bkt.clouddn.com/9fpjmkzhk6k05ojiuyzo7p66r.jpg\" formid=\"Form\" style=\"height: 120px; width: 80px;\">
+<br/>
+<img src=\"http://ou5331fwu.bkt.clouddn.com/3bul5vmdeczo8zshyxoueg66r.jpg\" id=\"http://ou5331fwu.bkt.clouddn.com/3bul5vmdeczo8zshyxoueg66r.jpg\" formid=\"Form\" style=\"height: 120px; width: 80px;\">
+<br/>
+赛安抚懂啊赛富森大法
+<br/>
+<img src=\"http://ou5331fwu.bkt.clouddn.com/a9f7ohze793xega8ewx6flxr.jpg\" id=\"http://ou5331fwu.bkt.clouddn.com/a9f7ohze793xega8ewx6flxr.jpg\" formid=\"Form\" style=\"height: 120px; width: 80px;\">
+<br/>
+发达国家发个
+<br/>
+<img src=\"http://ou5331fwu.bkt.clouddn.com/t3hgox9n62jtlg6hgu2dwjyvi.jpg\" id=\"http://ou5331fwu.bkt.clouddn.com/t3hgox9n62jtlg6hgu2dwjyvi.jpg\" formid=\"Form\" style=\"height: 120px; width: 80px;\"><br/><br/>" -->

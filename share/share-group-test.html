@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>答美色彩</title>
+	<script src="js/jquery.js"></script>
+	<style>
+	html{
+		font-size: 62.5%;
+		
+	}
+	html,body{
+		margin: 0;
+		padding: 0;
+		width:100%;
+		height: 100%;
+		background: #fff;
+	}
+	
+	main ,.group-guys{
+		width: 100%;
+		/* height: 100%; */
+	}
+	.group-guys{
+		padding: 1.5rem;
+		box-sizing: border-box;
+		margin-bottom: 1rem;
+		background: #fff;
+		box-shadow: .1rem -0.8rem 1rem .5rem #888;
+	}
+
+	.group-guys p{
+		margin-left: 1rem;
+
+	}
+	main{
+		box-sizing: border-box;
+		background: #efefef;
+	}
+	.guys-photo{
+		margin: 0;
+		padding: 0;
+		width:85%;
+		height: 5%;
+ 		display: flex;
+ 		flex-wrap: wrap; 
+	}
+	.float{
+		display: flex;
+	}
+	.mguys{
+		border: none;
+		background: none;
+		font-size: 1.8rem;
+		color: #666
+		 
+	}
+	.guys-photo li{
+		list-style: none;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		background: #aaa;
+		margin: 1rem;
+	}
+	.guys-photo li img{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%
+	}
+	.main-head{
+		height: 5rem;
+		display: flex;
+	}	
+	.my-photo{
+		width: 5rem;
+		height: 5rem;
+		border-radius: 50%;
+		background: #ccc;
+	 
+	}
+	.my-photo img{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+	.my-title{
+		flex: 1; 
+		line-height: 5rem;
+		margin: 0;
+		margin-left: 1rem;
+	}
+	.my-date{
+		flex: 1;
+		text-align: right;
+		line-height: 5rem;
+		margin: 0;
+ 
+	}
+	.main-text{
+		width: 100%;
+ 
+	}
+	.main-text p{
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+		color: #666;
+	}
+	.more{
+		border: none;
+		color: #0099FF;
+		background: #fff;
+		font-size: 1.6rem;
+		padding-left: 4rem;
+		background: linear-gradient(to right,transparent,#fff 30%);
+		margin-left: -3rem;
+	}
+	.mainhd{
+		border: none;
+		color: #0099FF;
+		background: #fff;
+		font-size: 1.6rem;
+	}
+
+	h2{
+		font-size: 1.8rem;
+		margin-bottom: -1rem;
+		color: #444;
+	}
+	hr{
+		 width: 95%;
+		 background: #ddd;
+		 border: none;
+		 height:1px;
+		 margin-top:3rem ;
+		  
+	}
+	.boxs{
+		width: 100%;
+		height: 2rem;
+		background: #ddd;
+		border-top: 1px solid red;
+
+	}
+	.group-main{
+		padding: 1.5rem;
+		box-sizing: border-box;
+		background: #fff;
+		 
+	}
+	.gray p{
+		color: #888;
+	}
+	footer{
+		padding: 1.5rem;
+	}
+ 
+	.uldis{
+		width: 100%;
+		background: #aaa;
+		margin: 0;
+		padding: 0;
+	}
+	.uldis li{
+		list-style: none;
+		width: 100%;
+		height: 10rem;
+		background:#fff;
+		margin: 1rem 0; 
+	 
+
+	}
+	.head{
+		display: flex;
+	}
+	.im{
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		background: #000;
+		margin-right: .8rem;
+	}
+	.name{
+		font-size:1.4rem;
+		font-weight: bold;
+		color: #333;
+	}
+	.info{
+		font-size: 1.2rem;
+		margin-top: 0;
+	}
+	.cText p{
+		margin-left: 4.3rem;
+		margin-top: -0.2rem;
+		position:relative;
+		line-height:2rem;
+		max-height:4rem;
+		overflow:hidden;
+		font-size: 1.2rem;
+	}
+	.cText p:after {
+		font-size: 1.2rem;
+		/* font-size: 3rem; */
+		content: "\02026";       
+		position:absolute; 
+		bottom:0;
+		right:.1rem;
+		padding-left: 3rem;
+		background:-webkit-linear-gradient(left,transparent,#fff 55%);
+		background:-o-linear-gradient(right,transparent,#fff 55%);
+		background:-moz-linear-gradient(right,transparent,#fff 55%);
+		background:linear-gradient(to right,transparent,#fff 55%);
+	}
+	img{
+		pointer-events: none;
+	}
+
+	
+	</style>	
+</head>
+<body>
+	<main>
+		<div class="group-guys gray">
+			<p style="font-size: 1.6rem;"> </p>
+			<div class="float">
+				<ul class="guys-photo">
+					 
+				 
+				</ul>
+				<button class="mguys">...</button>				
+			</div>			
+		</div>
+
+ 
+		<div class="group-main">
+			<div class="main-head gray">
+				<div class="my-photo"><img src="" alt=""></div>
+				<p class="my-title" style="font-size: 1.6rem;"> </p>
+				<p class="my-date" style="font-size: 1.6rem;">13月32日</p>
+			</div>
+			<div class="main-body">
+				<h2> </h2>
+				<div class="main-text">
+					<p> 
+					</p>
+				</div>
+				 
+					<!-- <button class="more">阅读全文</button> -->
+				 
+			</div>
+		</div>
+
+	</main>
+
+	<!-- 评论 -->
+<!-- 	<footer>
+		<br>
+		<hr>
+		<h2 style="margin-bottom: 1rem;">评论</h2>
+		<div class="discuss">
+			<ul class="uldis">
+				<li>
+					<div class="head" styple="">
+						<div class="im"></div>
+						<div>
+							<span class="name">姓名</span>	
+							<p class="info" >简介</p>				
+						</div>
+						
+
+					</div>
+					<div class="cText">
+						<p> </p>
+					</div>
+					<div class="foot">
+						<div class="time"></div>
+
+					</div>
+
+					
+				</li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+
+
+
+	</footer>
+ -->
+
+
+
+<script>
+		// 获取地址参数
+	// var hww=function GetRequest() {
+	// 	var url = location.search; //获取url中"?"符后的字串
+	// 	// console.log(url);
+	// 	var theRequest = new Object();
+	// 	if (url.indexOf("?") != -1) {
+	// 	var str = url.substr(1);
+
+	// 	strs = str.split("&");
+	// 	for(var i = 0; i < strs.length; i ++) {
+	// 	theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+	// 	}
+	// 	}
+	// 	return theRequest;
+
+	// };
+
+	// var pn=hww().nickname;
+	// var cId=hww().cId;
+	// console.log(pn);
+	// console.log(cId);
+ 	
+
+	
+
+    
+	// 
+
+
+// 获取地址参数 best
+	var hww=function getUrlVars(){
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?')+1).split('&');
+		for(var i = 0; i < hashes.length; i++) {
+		hash = hashes[i].split('=');
+		vars.push(hash[0]);
+		vars[hash[0]] = hash[1];
+		}
+	return vars;
+	} 
+
+	// console.log(decodeURI(hww().nickname))
+	var cId=hww().cId;
+	var nickname=decodeURI(hww().nickname);
+
+
+	// 
+
+ 
+
+	var datas={
+ 
+		pageSize:10
+	}
+
+	//朋友列表
+$.ajax({
+	url:"http://139.224.208.224/damei-app/share/getFriendsList?cId="+cId,
+	type:"get",
+	data:datas,
+	success:function(data){
+		var data=data.data;
+		console.log(1);
+		console.log(data);
+
+	 //    var searchUrl =window.location.href; 
+		// //截取 url中的“=”,获得“=”后面的参数 ,只能获取一个参数  
+  //  	    var searchData =searchUrl.split("=");  
+  //  	    console.log(searchData[1]);     
+  //       var  searchText =decodeURI(searchData[1]);   //decodeURI解码  
+  //   	console.log(searchText);
+
+		$(".group-guys p").html(nickname+"和他的朋友们");
+		$(".my-title").html(nickname+"发布")
+		var list="";
+		$.each(data,function(index,obj){
+
+ 				list+=`
+					<li>
+						<img src="${this.headImg}" alt="">
+
+					</li>
+
+ 				`
+
+		});
+		 $('.guys-photo').html(list);
+		
+		 $('.my-photo img').attr("src",data[0].headImg)
+
+	},
+	error:function(){
+		console.log(2)
+	}
+})
+
+//文章
+function wenz(){
+	$.ajax({
+	url:"http://139.224.208.224/damei-app/share/getExperienceArticle?cId="+cId,
+	type:"get",
+	success:function(data){
+		var data=data.data;
+		console.log("文章");
+		console.log(data);
+		var cTime= data[0].createTime;
+		console.log(cTime);
+
+  // var timeTrans = new Date(parseInt(cTime) );
+  // console.log(timeTrans.toLocaleString('chinese',{hour12:false}));
+
+var timestamp =cTime;
+var d = new Date(timestamp);    //根据时间戳生成的时间对象
+var cDate = (d.getFullYear()) + "-" + 
+           (d.getMonth() + 1) + "-" +
+           (d.getDate()) + " " ;
+           // + 
+           // (d.getHours()) + ":" + 
+           // (d.getMinutes()) + ":" + 
+           // (d.getSeconds());
+ 
+  
+		$('.my-date').html(cDate);
+		$('.main-text p').html(data[0].content);
+		$('.main-body h2').html(data[0].title);
+		//限制文本长度
+		function limitText(text,Maxlen){
+			str = $(text).html();
+			newStr=str.slice(0,Maxlen);
+			$(text).html(newStr+'<button class="more">阅读全文 v</button>')
+		 }
+		var text=$('.main-text p');
+		limitText(text,54);
+ 
+
+		
+	},
+	error:function(){
+		console.log(2)
+	}
+})
+
+
+}
+wenz();
+
+
+  
+
+
+//文章隐藏
+ 
+$(document).on('click','.more',function(){
+	$('.main-text p').html(str+'<button class="mainhd">收起 ^</button>')
+})
+$(document).on('click','.mainhd' ,function(){
+	$('.main-text p').html(newStr+'<button class="more">阅读全文 v</button>')
+})	
+ 
+
+// 
+//用户隐藏
+$(".guys-photo li:gt(3)").hide("500")
+$(".mguys").on("click",function(){
+	 $(".guys-photo li:gt(3)").toggle("500")
+ 	 
+})
+ 
+
+</script>	
+</body>
+</html>
