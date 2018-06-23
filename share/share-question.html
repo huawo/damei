@@ -156,9 +156,17 @@
 		width: 15rem;
 		height: 3rem;
 		margin-bottom: 1.4rem;
-		background: url('img/voice_button@2x.png');
+		background: url('img/voice_button1@2x.png');
 		background-size: 15rem 3rem;
+
 	}
+	.mmp .img1{
+		height: 2.5rem;
+		margin:.3rem 0 0 2.3rem;
+		float: left;
+	 
+	}
+ 
 
 	.liCont p{
 		margin-top: 0;
@@ -328,6 +336,8 @@
 							</div>
 							<div class="liMp">
 								<div class="mmp">
+									<img class=img1 src="img/2tk.png" alt="" />
+								 
 									<audio src="${this.voice}"></audio>
 								</div>
 
@@ -358,13 +368,38 @@
 	}
 	list();
 
-
+	var i=1;
 	$(document).on("click",".mmp",function(){
-	 	var ho=$(this).children("audio")[0].play();
- 	
+	 	$(this).children("audio")[0].play();
 	 	// console.log(ho);
 	 	// ho[0].play(); 
-	})
+ 		clearTimeout(stop);
+	    stop=setInterval(function(){
+
+		function nextImg(){
+		 		i++;
+		 		var newsrc=i+'tk.png'
+		 		$('.mmp img').attr('src',"img/"+newsrc);
+		 		if(i==4){
+		 			i=1
+		 		}
+		 	}
+		 	nextImg();
+		 	var ddd=$(".mmp audio")[0];	
+			if (ddd.paused) {
+				clearTimeout(stop);	
+			}
+			
+			},400);
+ 
+
+	});
+ 
+
+	
+
+ 
+
 
 	
 </script>	
