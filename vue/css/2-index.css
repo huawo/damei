@@ -6,13 +6,13 @@ body{
 	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
 	height: 1999px;
 	background: #fff;
-	-webkit-tap-highlight-color:transparent; 
 }
 html{
 	font-size: 62.5%;
 	color:  #34495e; 
  
 }
+*{-webkit-tap-highlight-color:transparent;}
 html,body{
 	width:100%;
 	overflow-x:hidden
