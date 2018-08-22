@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<!--  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<title>！！！</title>
+	<!-- <link href="img/2.jpg" rel="shortcut icon" />	 -->
+ 	<!-- <link rel="icon" href="img/2.jpg"> -->
+ 	<link rel="icon" href="img/wow.ico">
+ 	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<script src="js/vue.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/del.js"></script>
+	<style>
+		body{
+			font-family: 
+		}
+		li{
+			list-style: none;
+		}
+ 		#hua{
+ 			width: 16px;
+ 			height: 16px;
+ 			background: red;
+ 		}
+ 		#hua:hover{
+ 			background: blue
+ 		}
+ 		.table{
+ 			width: 500px;
+ 		}
+
+
+
+ 		   /*样式1*/  
+        .a-upload {  
+            padding: 4px 10px;  
+            height: 30px;  
+            line-height: 20px;  
+            position: relative;  
+            cursor: pointer;  
+            color: #888;  
+            background: #fafafa;  
+            border: 1px solid #ddd;  
+            border-radius: 4px;  
+            overflow: hidden;  
+            display: inline-block;  
+            *display: inline;  
+            *zoom: 1  
+        }  
+        .a-upload  input {  
+            position: absolute;  
+            font-size: 100px;  
+            right: 0;  
+            top: 0;  
+          	cursor: pointer;
+            
+        }  
+        .a-upload:hover {  
+            color: #444;  
+            background: #eee;  
+            border-color: #ccc;  
+            text-decoration: none  
+        }  
+        /*样式2*/  
+        .file {  
+            position: relative;  
+            display: inline-block;  
+            background: #D0EEFF;  
+            border: 1px solid #99D3F5;  
+            border-radius: 4px;  
+            padding: 4px 12px;  
+            overflow: hidden;  
+            color: #1E88C7;  
+            text-decoration: none;  
+            text-indent: 0;  
+            line-height: 20px;  
+        }  
+        .file input {  
+            position: absolute;  
+            font-size: 100px;  
+            right: 0;  
+            top: 0;  
+            /* opacity: 0;   */
+        }  
+        .file:hover {  
+            background: #AADFFD;  
+            border-color: #78C3F3;  
+            color: #004974;  
+            text-decoration: none;  
+        }
+
+
+        /* 3 */
+	 	.asd{
+	 	/* 	width: 100px;
+	 		height: 30px;
+	 		background: #fff;
+	 		border-radius: 1px; */
+	 		border: none;
+	 		position: absolute;
+	 		top: 0;
+	 		left: 0;
+	 		font-size: 100px;
+	 		overflow: hidden;
+	 		opacity: 0;
+	 	}
+
+	 	.aa{
+	 		width: 150px;
+	 		height: 40px;
+	 		background: orange;
+	 		border-radius: 4px;
+	 		position: relative;
+	 		overflow: hidden;
+	 		line-height: 40px;
+	 		text-align: center;
+	 		
+	 	}
+
+
+/* 
+	.uploadImgBtn {
+
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        position: relative;
+        background: red;	
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .uploadImgBtn input {
+        position: absolute;
+        right: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+     
+    .pic {
+        width: 100px;
+        height: 100px;
+    }
+    .pic  img {
+        width: 100%;
+        height: 100%;
+    } */
+ 			.fileBox{
+				width: 150px;
+				height: 66px;
+				background: #eee ;
+				cursor: pointer; 
+				position: relative;
+				border-radius: 4px;
+				margin-left: 15px;
+				border: 1px solid #dedede;
+				overflow: hidden;
+ 
+			}
+			.fileBox input{
+				
+				position: absolute; 
+				left: 0;
+				top: 0; 
+				font-size: 100px;
+			/* 	opacity: 0; */
+				cursor: pointer;
+			}
+			 
+		    .pic {
+		        width: 100%;
+		        height: 100%;
+		        
+		    }
+		    .pic  img {
+		        width: 100%; 
+		        height: 100%;
+		         
+		    }
+		   
+	</style>
+ 	
+	 
+</head>
+<body>
+  
+<!--  ul>li.box${a$}*5
+ 370830198704276112
+ -->
+ 
+<!-- <div class="box">
+	<p :style="{color:color1}">{{msg}}</p>
+	<input type="text" v-model="msg">
+		<ol>
+			<todo-item></todo-item>
+		 
+		</ol>
+ 
+
+</div> -->
+ 
+ 
+<hr>
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>安卓开放平台</th>
+		<th>开发者账号</th>
+		<th>app应用</th>
+	</tr>
+	<tr>
+		<td>360</td>
+		<td>√</td>
+		<td>已上架 √</td>
+	</tr>
+	<tr>
+		<td>百度</td>
+		<td>√</td>
+		<td>已上架 √</td>
+	</tr>
+	<tr>
+		<td>腾讯</td>
+		<td>√</td>
+		<td>已上架 √</td>
+	</tr>
+	<tr>
+		<td>阿里</td>
+		<td>√</td>
+		<td>已上架 √</td>
+	</tr>
+	<tr>
+		<td>OPPO</td>
+		<td>√</td>
+		<td>已上架√</td>
+	</tr>
+	
+	<tr>
+		<td>vivo</td>
+		<td>√</td>
+		<td>审核中</td>
+	</tr>
+	<tr>
+		<td>小米</td>
+		<td>√</td>
+		<td>审核中</td>
+	</tr>
+	
+	
+	<tr>
+		<td>华为</td>
+		<td>√</td>
+		<td>审核中</td>
+	</tr>
+ 
+</table>
+<hr>
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>配置</th>
+		<th>小米</th>
+		<th>联想</th>
+	</tr>
+	<tr>
+		<td>CPU</td>
+		<td>i5 8300</td>
+		<td>i5 8300</td>
+	</tr>
+	<tr>
+		<td>显卡</td>
+		<td>1066</td>
+		<td>1066</td>
+	</tr>	
+	<tr>
+		<td>硬盘</td>
+		<td>256G/1T</td>
+		<td>512G/无</td>
+	</tr>	
+	<tr>
+		<td>内存</td>
+		<td>8G/2666MHz</td>
+		<td>8G</td>
+	</tr>
+	<tr>
+		<td>价格</td>
+		<td>7999</td>
+		<td>8199</td>
+	</tr>			
+
+
+</table>
+
+
+
+
+ <hr>
+<button class="btn btn-danger "data-toggle="modal" data-target="#hi" >1</button>
+
+<div id="hi" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+
+				<p>132</p>
+				<div class="ch" style="margin:0 auto ;text-align:center"><button class="btn btn-default" data-dismiss="modal">取消</button>
+				<button class="btn btn-danger">删除</button></div>
+				
+			</div>
+		 
+				
+			 
+		</div>
+	</div>
+</div>
+
+
+
+
+<button class="btn btn-default" data-toggle="modal" data-target="#bx">新增</button>
+<div id="bx" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header"><h2>新增</h2></div>
+			<div class="modal-body">what</div>
+			<div class="modal-footer">
+				<button class="btn "data-dismiss="modal">取消</button>	
+				<button class="btn">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--  
+<div class="computed">
+	<p>
+		{{fullName}}
+	</p>
+	
+</div> -->
+
+ 
+<div class="fileBox">
+	 
+	<input   type="file" name=" "  class="fileLoad ">
+ 
+	  
+</div>
+<hr>
+<div class="col-sm-3 fileBox1">
+													 
+	<input type="file" id="pickfile2" class="fileLoad">
+</div>
+
+<!--  -->
+<hr>
+ <input type="file" onchange="previewFile()" class="ipt"><br>
+<img src="" height="200" alt="" class="img">
+ <hr>
+<script> 
+function previewFile() {
+  var preview = $('.img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
+
+  reader.addEventListener("load", function () {
+    // preview.src = reader.result;
+    preview.attr("src",reader.result)
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+};
+
+
+	 
+  $(".fileLoad").on("click",function(){
+  	$(this).css("border","2px solid red")
+  })
+
+
+ 
+   
+$(".fileLoad ").blur(function(){ 
+
+    var files = this.files[0];     
+    console.log(files);
+    //3、回显     
+	fileImg=$( '<img src="" alt="" />' ); 
+	filePic=$('<div class="pic"></div>')     
+	$(".fileBox").append(filePic);
+    var fileFr = new FileReader();  
+    // fileFr.readAsDataURL(files	);//读取文件/文件url
+    fileFr.onload = function(e){
+        console.log("回显了图片");
+        fileImg.attr('src', this.result );
+    };  
+     $(this).next(".pic ").html(fileImg);
+ 
+})
+  // 
+ 
+
+  
+</script>
+</body>
+</html>
+
+
+ 
+<!-- 
+ <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+  -->
+ 
+ 
+
+<!--
+组件化应用构建：
+	组件树：
+	一种抽象的 允许我们使用小型的，独立的，可复用的组件构建大型应用
+
+
+
+	生命周期
+	 
+	每个vue实例创建时一系列初始化过程即生命周期；
+	期间运行的称为生命周期钩子函数；
+	可以给用户在不同阶段添加自己代码的机会。
+	beforcreate
+	created
+ -->
+
+ 
+
+ 
+
+
+ 1.视频  		2.学院（培训）/搭配		  3.商城 		 4.消息	 	  5.更多
+ 
+
+视频：
+	1.后台自定义分类，专栏 ;
+	2.用户上传（是否转载，关注用户；
+	3.右上角播放量排行榜；
+	4.课程：介绍、目录、评价，订阅课程；
+	5.广告位
+
+学院（会员制）：
+	1.课堂：
+			1.小讲：	
+					1.全部			
+					2.热门推荐： 可向专家提问；
+					3.高校色彩；
+					4.服装色彩；
+					5.生活色彩；
+
+			2.问答：
+					1.全部
+					2.流行趋势；
+					3.色彩设计；
+					4.高考色彩；
+
+			3.搭配：
+					1.为模型搭配，在首页显示
+
+			4.方案：
+					1.浏览方案
+
+			5.培训：
+					1.一系列活动：培训预约、艺术展、等
+
+	2.读书会： 
+			1.自定义分类：会员专区、免费、榜单、分类
+			2.电子书推荐
+
+商城：
+	1.自营（厂商合作）；
+	2.商品分类；
+	3.美术馆，可售；
+	4.艺术展购票；
+消息：
+	1.评论回复；
+	2.收到的赞；
+	3.新增粉丝；
+	4.系统通知；
+更多：
+	1.我的动态；
+	2.我的收藏；
+	3.我的关注；
+	4....
+ 
+
+
+
+
+
+后台管理网站：方案上传优化
