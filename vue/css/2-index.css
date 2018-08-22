@@ -6,8 +6,10 @@ body{
 	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
 	height: 1999px;
 	background: #fff;
-	-webkit-tap-highlight-color:transparent; 
+	 
 }
+
+*{-webkit-tap-highlight-color:transparent;}
 html{
 	font-size: 62.5%;
 	color:  #34495e; 
@@ -483,4 +485,61 @@ header{
 	height: 3rem;
 	font-size: 1.4rem;
 	 
+}
+
+/* footer */
+footer{
+	width: 100%;
+	height: 4.5rem;
+	padding: 0.3rem 0;
+	background: #fff;
+	position:fixed;
+	bottom: 0;
+	border-top: 1px solid #eee;
+}
+.ft-ul{
+	display: flex;
+}
+.ft-ul li{
+	flex: 1;
+	color: #697c8f;
+	font-size: 1.2rem;
+	line-height: 3rem;
+	text-align: center;
+}
+.ft-ul li.active span{
+	color: #018172;
+}
+ 
+.ft-ul li i{
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	margin: 0 auto;
+	margin-bottom: -0.8rem;
+ 
+}
+.ft-ul li span{
+	color: #999;
+	 
+}
+.ft-ul li:nth-child(1) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_4.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(2) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_2-1.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(3) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(4) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_1.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(5) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_3.png');
+    background-size: cover;
 }
