@@ -1,8 +1,9 @@
 body{
 	margin: 0;
 	padding:0;
-	width: 100%;
-	font-size: 1.6rem; 
+	/* width: 100%; */
+	font-size: 1.6rem;
+	width: 100%; 
 	overflow-x: hidden;
 	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
 	height: 1999px;
@@ -11,6 +12,8 @@ body{
 html{
 	font-size: 62.5%;
 	color:  #34495e;
+	width: 100%; 
+	overflow-x: hidden;
 
 }
 ul,p{
@@ -21,7 +24,8 @@ ul,p{
 li{
 	list-style: none;
 	-moz-user-select: none;
-	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 /* 	pointer-events: none; */
 	
@@ -79,7 +83,7 @@ header{
 	background-size: 100%;
 }
 .hd-lf i:nth-child(2){
-	margin-left: 3rem;
+	margin-left: 4rem;
 	height: 2rem;
  	width: 2rem;
  	display: block;
