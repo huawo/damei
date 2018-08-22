@@ -1,6 +1,7 @@
 body{
 	margin: 0;
 	padding:0;
+	width: 100%;
 	font-size: 1.6rem; 
 	overflow-x: hidden;
 	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
@@ -19,6 +20,10 @@ ul,p{
 }
 li{
 	list-style: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+/* 	pointer-events: none; */
 	
 }
 header{
@@ -33,7 +38,7 @@ header{
 	/* display: flex; */
 	flex-wrap: wrap;
 	flex: 12;
-	height: 5rem;
+	height: 4rem;
 	width: 100%;
 	background: #fff;
 	position: relative

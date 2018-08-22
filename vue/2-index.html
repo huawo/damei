@@ -37,7 +37,7 @@
 						<li class="l-bk">读书会</li>
 					</ul>
 					<span class="n-line add-line"></span>
-					<hr style="position:absolute;top:0">					
+					<hr style="position:absolute;top:0;margin-bottom:0">					
 			</div>
 
 			
@@ -451,19 +451,18 @@
  
 	});
 
-	// 
  
- 
+ h_once=true;
+
 
 
  		$(window).scroll(function() {
 
  			 hType="sm";
- 			
-			if($(document).scrollTop() >= 1) {
+ 			// if($(document).scrollTop() >= 1) {
+			if(h_once==true) {
  				 console.log("启动超级变换形态！");
- 			
- 				
+ 						
  				 $(".h-nav").stop().animate({
  				 	top:"1rem"
  				 },0);
@@ -493,20 +492,25 @@
  				 }else{
  				 	$(".n-line").stop().animate({
  				 		left:"30%",		
- 				 		width:"10%",
-					    
+ 				 		width:"10%",					    
 					});
-				
-
  				 };
 			 	 $(".hd-t").stop().animate({
 				 	top:"0",
 				 	opacity:"0"
-				 },800)
-	  
- 	 
-   
+				 },100);
+				 
 			} else {
+				
+				 
+			};
+ 
+
+			h_once=false;
+		})
+		$(window).scroll(function(){
+			if ($(document).scrollTop()<1) {
+				 h_once=true;
 				 hType="xm";
  				 $(".hd-radio").stop().animate({
  				  		width:"3.6rem",
@@ -550,12 +554,15 @@
  				  $(".hd-t").stop().animate({
 				 	top:"1.5rem",
 				 	opacity:"1"
-				 },500)
-				 
-			};
- 
+				 },100)
 
 
+
+
+
+
+
+			}
 		})
 
 
