@@ -4,7 +4,7 @@ body{
 	/* width: 100%; */
 	font-size: 1.6rem;
 	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
-	height: 1999px;
+	height: 190rem;
 	background: #fff;
 	 
 }
@@ -110,7 +110,14 @@ header{
 	font-weight: bold; 
 	margin-bottom: -0.5rem;
 }
-
+.hd-t i{
+	width: 0;
+	height: 0;
+	display: inline-block;
+	margin-left: 1rem;
+	border: .6rem solid transparent;
+	border-left: 1.1rem solid #efa977;
+}
 .hd-hd .hd-radio{
 	width: 3.6rem;
 	height: 3.6rem;
@@ -166,19 +173,12 @@ header{
 
  
  }
- .nav-line{
- 	background: #e9a574;
- 	height:.5rem;
-  	width: 30%;
-  	margin: 0 auto;
- 	display: block;
  
- }
  .n-line{
  	width: 15%;
  	display: block;
  	height: .4rem;
- 	background: #e9a574;
+ 	background: #efa977;
  	position: absolute;
  	left: 25%;
  	top: 2.6rem	
