@@ -21,9 +21,10 @@
 	            <li><a href="#"><img src="img/5b5940ed00019df318720632.jpg.png"></a></li>
 	            <li><a href="#"><img src="img/5b4c0686000136fc18720632.jpg.png"></a></li>
 	        </ul>
-	        <div id="indicator"></div>
+	       <!--  <div id="indicator"></div> -->
    		</div>
 		<div class=h-input>
+			<i></i>
 			<input type="text" placeholder="商品 、艺术展">
 		</div>
 		
@@ -208,18 +209,18 @@
 
  	var banner_i=0;
 
- 	var img_width=$(".banner-war ul li").width();
+ 	var img_width=$(".banner-war ul li").width()+10;
  	var clone=$(".banner-war ul li").first().clone(true);
  	$(".banner-war ul").append(clone);
  	var img_size=$(".banner-war ul li").length;
  	// for(var i=0;i<img_size-1;i++){
  	// 	console.log(i)
  	// }
- 	for(i=0;i<img_size-1;i++){
- 		var list=`<div></div>`
- 		$("#indicator").append(list)
- 	};
- 	$("#indicator div").first().addClass("onclick");
+ 	// for(i=0;i<img_size-1;i++){
+ 	// 	var list=`<div></div>`
+ 	// 	$("#indicator").append(list)
+ 	// };
+ 	// $("#indicator div").first().addClass("onclick");
 
 
  	var timer=setInterval(function(){
@@ -229,19 +230,19 @@
  	function toRight(){
  		banner_i++;
  		if (banner_i==img_size) {
- 			$(".banner-war ul").stop().css({"left":"0"});
+ 			$(".banner-war ul").stop().css({"left":" 5px"});
  			banner_i=1;
  		};
 
  		$(".banner-war ul").stop().animate({
- 			left:-banner_i*img_width
- 		},300);
+ 			left:-(banner_i*img_width)
+ 		},500);
  		// list
- 		if (banner_i==img_size-1) {
- 			$("#indicator div").eq(0).addClass("onclick").siblings().removeClass("onclick")
- 		}else{
- 			$("#indicator div").eq(banner_i).addClass("onclick").siblings().removeClass("onclick")
- 		}
+ 		// if (banner_i==img_size-1) {
+ 		// 	$("#indicator div").eq(0).addClass("onclick").siblings().removeClass("onclick")
+ 		// }else{
+ 		// 	$("#indicator div").eq(banner_i).addClass("onclick").siblings().removeClass("onclick")
+ 		// }
 
 
  	}
