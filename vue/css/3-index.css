@@ -124,7 +124,7 @@ header{
 	width: 2rem;
 	height: 2rem;
 	position: absolute;
-	bottom: 0.3rem;
+	bottom: 0.4rem;
 	left: 7%;
 	background:url('../img/ss1.png') no-repeat;
 	background-size: 80%;
@@ -141,7 +141,7 @@ header{
 	
 }
 ::placeholder{
-	color: #aaa;
+	color: #bbb;
 }
 /* wrapper */
 .wrapper{
