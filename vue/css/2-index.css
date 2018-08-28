@@ -510,6 +510,13 @@ footer{
 .ft-ul li.active span{
 	color: #018172;
 }
+.ft-ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;	 
+	
+}
  
 .ft-ul li i{
 	display: block;
