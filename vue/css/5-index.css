@@ -1,0 +1,641 @@
+body{
+	margin: 0;
+	padding:0;
+	/* width: 100%; */
+	font-size: 1.6rem;
+	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+	/* height: 190rem; */
+	background: #eee;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	 
+}
+
+*{-webkit-tap-highlight-color:transparent;}
+html{
+	font-size: 62.5%;
+	color:  #34495e; 
+ 
+}
+html,body{
+	/* width:100%; */
+	/* overflow-x:hidden */
+} 
+ul,p{
+	margin: 0;
+	padding: 0;
+
+}
+li{
+	list-style: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+/* 	pointer-events: none; */
+	
+}
+header{
+	width: 100%;
+	background: #fff;
+	padding-bottom: 5rem;
+	margin-bottom: 1rem;
+}
+.h-top{
+	height: 5rem;
+	background: #fff ;
+	display: flex;
+}
+ 
+.h-top span{
+	flex: 10;
+	margin-left: 1.8rem;
+	font-size: 2.8rem;
+	font-weight: 500;
+	line-height: 5rem;
+}
+.h-top i{
+	text-align: right;
+	margin-right: 1.7rem;
+	font-size: 2.6rem;
+	color:#034b2b;
+	flex: 2;
+	line-height: 5rem;
+}
+.h-banner{
+	margin-top: 1rem;
+	height: 13rem;
+	background: #fff ;
+	position: relative
+}
+.banner-war{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+/* 	border-top-left-radius: 2rem;
+	border-top-right-radius: 2rem; */
+ 	
+}
+.banner-war ul{
+	width: 100%;
+	width: 400%;
+	height: 100%;
+	position: relative;
+ 
+}
+.banner-war ul li{
+	float: left;
+	height: 100%;
+	width: 23%;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+
+}
+.banner-war ul li:nth-child(1){
+	margin-left: 1.5rem;
+}
+.banner-war ul li:nth-child(4){
+	margin-right: 1rem;
+}
+ 
+.banner-war li img{
+ 	border-radius: .8rem;
+	width: 100%!important;
+	height: 100%!important;
+}
+/* #indicator{
+    width:10rem;
+    text-align:center;
+    position:absolute;
+    top:80%;
+    right:0;
+    right: 0;
+    margin: auto;
+    z-index:1;
+ }
+#indicator div{
+    height:.5rem;
+    width:2rem;
+    border-radius:5rem;
+    background-color:#034b2b;
+    float:left;
+    margin-left:5px;
+    opacity:0.9;
+    filter:Alpha(opacity=90); 
+}
+.onclick{
+    background-color:#29bf88 !important;
+}    */
+/* .war-img1{
+	left: 0;
+}
+.war-img2{
+	left: 100%;
+} */
+.h-input{
+	width: 100%;
+	padding: 0 5%;
+	box-sizing:border-box;
+	position: absolute;
+	bottom: -1.8rem;
+
+}
+.h-input i{
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	bottom: 0.4rem;
+	left: 7%;
+	background:url('../img/ss1.png') no-repeat;
+	background-size: 80%;
+
+}
+.h-banner input{
+	width:100%;
+ 	padding-left: 3rem;
+ 	box-sizing: border-box;
+	height: 3rem;
+	border-radius: .4rem;
+	border: none;
+	box-shadow: .1rem .1rem .3rem .1rem #ddd;
+	
+}
+::placeholder{
+	color: #bbb;
+}
+
+.tab{
+	margin-top: 1rem;
+	background: #fff;
+}
+
+
+
+/* star */
+.h-foot{
+	margin-top: 3rem;	
+}
+	.s-ul{
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 2rem;
+		height: 3rem;
+		display: flex;
+	}
+	.s-ul li{
+		flex: 1;
+		margin: 0 1rem;
+
+ 
+	}
+	.s-ul li i{
+		margin: 0 auto;
+		display: block;
+		border-radius: 50%;
+		width: 4.5rem;
+		height: 4.5rem;
+		background: #fff;
+	}
+	.s-ul li:nth-child(1) i{
+		background: url('../img/path_new1.png');
+		background-size:cover;
+
+	}
+	.s-ul li:nth-child(2) i{
+		background: url('../img/path_new2.png');
+		background-size:cover;
+	}
+	.s-ul li:nth-child(3) i{
+		background: url('../img/path_new3.png');
+		background-size:cover;
+	}
+	.s-ul li:nth-child(4) i{
+		background: url('../img/path_new4.png');
+		background-size:cover;
+	}
+	.s-ul li:nth-child(5) i{
+		background: url('../img/path_new5.png');
+		background-size:cover;
+	}
+	.s-ul li span{
+		font-size: 1.2rem;
+		margin-top: 1rem;
+		display: block;
+		color: #34495e;
+		text-align: center;
+	}
+/* end */
+.wrapper{
+	background: #fff;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+.coming{
+ 
+}
+.com-title{
+ 	height: 3rem;
+	display: flex;
+}
+.com-title i{
+	background: url('../img/icon/crom.png') no-repeat;
+ 	margin-right: .8rem;
+	flex: 1;
+}
+.com-title h4{
+	flex: 6;
+	margin: 0;
+	line-height: 3rem;
+	font-weight: normal;
+}
+.com-title p{
+	flex: 5;
+	color: #999;
+	font-size: 1.2rem;
+	line-height: 3rem;
+	text-align:right;
+}
+.com-teacher{
+	width: 100%;
+	height: 8rem;
+	background: #fff;
+	box-shadow: .2rem .2rem .4rem .1rem #eee;
+	border-radius: .4rem;
+	margin-top: 1rem;
+	display: flex;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+.com-teacher .th-text{
+	flex: 7.5;
+ 
+}
+.com-teacher .th-text span{
+	font-size: 1.2rem;
+	color: #999;
+}
+.com-teacher .th-img{
+	flex: 4.5;
+
+}
+.th-img div{
+	margin-left: 4rem;
+	height: 6rem;
+	width: 6rem;
+	border: 2px solid #bbb;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.th-img div img{
+	width: 100%;
+	height: 100%;
+
+}
+/*  */
+.autoplay{
+	margin-top: 2.5rem;
+ 
+}
+.autoplay span{
+	display: block;
+	font-size: 1.2rem;
+	color: #999;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.mov{
+	background: #eff4f7;
+	border-radius: .4rem;
+
+}
+
+.mov video{
+	border-radius: .4rem;
+	width: 100%;
+}
+.mov div span{
+	text-align: left;
+	margin-top: 1rem;
+ 
+}
+.mov button{
+	width: 30%;
+	height: 3rem;
+	color: #efefef;
+	border: none;
+	border-radius:.5rem;
+  	background: linear-gradient(to right bottom, #009a61,#018172);
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 1rem;
+}
+.autoul{
+	margin-top: 2rem;
+	 
+}
+.autoul ul{
+
+}
+.autoul li{
+	width: 100%;
+	height: 8rem;
+	margin-bottom: 2rem;
+	display: flex;
+ 
+}
+.autoul .li-img{
+ 	height: 8rem;
+ 	width: 43%;
+ 	border-radius: .4rem;
+ 	overflow: hidden;
+	
+}
+.autoul .li-img img{
+	height: 100%;
+	border-radius: .4rem;
+	display: inline;
+}
+.autoul .li-text{
+ 	width: 57%;
+
+}
+.autoul .li-text i,.a-mov-text i{
+	display: inline-block;
+	width: 55px;
+	height: 1.1rem;
+	background: url('../img/icon/starget.png');
+	background-size: 1.1rem;
+}
+.autoul .li-text span,.a-mov-text span:first-of-type{
+	font-size: 1.2rem;
+	color: #999;
+
+}
+.autoul .li-text p{
+	font-weight: 600;
+}
+.mb{
+	margin-bottom: 1rem;
+}
+.tab-nav{
+	display: flex;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	 
+}
+.tab-nav li{
+	flex: 1;
+	margin-top: .3rem;
+	font-size: 1.4rem;
+	text-align: center;
+}
+.line{
+	display: block;
+	width: 3rem;
+	height: .4rem;
+	background: #009A61;
+	border-radius: 4rem;
+	position: absolute;
+	left: 12%;
+/* 	left: 46%;
+	left: 80%; */
+
+
+}
+.ul-f{
+	position: relative;
+}
+/*  */
+.a-mov{
+	padding: 1rem; 
+	box-sizing: border-box;
+	margin-top: 1.5rem;
+	 
+}
+.a-mov ul{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+ 
+.a-mov li{
+	width: 48%;
+	margin-bottom: 2rem;
+	overflow: hidden;
+}
+.a-mov li img{
+	width: 100%;
+	border-radius: 4px;
+
+}
+.a-mov-img{
+	display: block
+}
+.a-mov-text{
+	color: #34495e;
+}
+.a-mov-text div:first-of-type{
+	margin-bottom: .2rem;
+	margin-top: -.3rem;
+}
+.str e{
+	font-size: 1.6rem;
+	color: #444;
+}
+.charge{
+	height: 10rem;
+	background: #eee;
+ 	padding-top: 2rem;
+ 	margin-bottom: 3rem;
+}
+.charge button{
+	display: block;
+	margin: 0 auto ;
+	border: 1px solid #bbb;
+	padding: .5rem 1rem;
+	border-radius: 4rem; 
+	background: #eee;
+
+}
+.charge span{
+	margin-top: 1rem;
+	color: #aaa;
+	font-size: 1rem;
+	display: block;
+	text-align: center;
+}
+
+#hobby{
+	width: 100%;
+	background: rgba(255, 255, 255, 1);
+	position: absolute;
+	top: 0;
+	left: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+	position: fixed;
+}
+#hobby h3{
+	font-weight: normal;
+	text-align: center;
+	margin-bottom:0.7rem;
+}
+#hobby span{
+	color: #777;
+	display: block;
+	font-size: 1.4rem;
+	text-align: center;
+}
+#hobby i{
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	margin-right: 1rem;
+	
+}
+#hobby .ol{
+	margin-top: 2.5rem;
+}
+#hobby .ol>li{
+	border-bottom: 1px solid #efefef;
+	margin-bottom: 2rem;
+}
+#hobby .ol li:nth-child(1) i{
+	background: #FF6666  ;
+	box-shadow: .1rem .2rem .3rem .1rem rgba(255, 102, 102, 0.5);
+}
+#hobby .ol li:nth-child(2) i{
+	background: #CC66FF   ;
+	box-shadow: .1rem .2rem .3rem .1rem rgba(204, 102, 255, 0.5);
+}
+#hobby .ol li:nth-child(3) i{
+	background: #9999FF  ;
+	box-shadow: .1rem .2rem .3rem .1rem rgba(153, 153, 255, 0.5);
+}
+#hobby .ol li:nth-child(4) i{
+	background: #FFCC66  ;
+	box-shadow: .1rem .2rem .3rem .1rem rgba(255, 204, 102, 0.5);
+}
+
+.sm-ol{
+	padding: 1rem 0;
+}
+.sm-ol li{
+	color: #777;
+	font-size: 1.4rem;
+	border: 1px solid #ddd;
+	border-radius: 4rem;
+	display: inline-block;
+	padding: .3rem .8rem;
+	margin-top: 1rem;
+}
+.btnget-f{
+	width: 100%;
+	height: 6rem;
+
+	background: linear-gradient(0deg, rgba(255, 255, 255, 1.0),rgba(255, 255, 255,0.1));
+}
+.btnget{
+	display: block;
+	margin:0 auto;
+	width: 50%;
+	height: 4rem;
+	font-size: 1.6rem;
+	/* padding: .5rem 2rem;
+	box-sizing: border-box;
+ */	border-radius: 4rem;
+	border: none;
+	color: #fff;
+	box-shadow: .1rem .1rem .5rem .1rem #ccc;
+	background: linear-gradient(45deg, #009a61,#018172)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+footer{
+	width: 100%;
+	height: 4.5rem;
+	padding: 0.3rem 0;
+	background: #fff;
+	position:fixed;
+	bottom: 0;
+	border-top: 1px solid #eee;
+}
+.ft-ul{
+	display: flex;
+}
+.ft-ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;	 
+	
+}
+.ft-ul li{
+	flex: 1;
+	color: #697c8f;
+	font-size: 1.2rem;
+	line-height: 3rem;
+	text-align: center;
+}
+ 
+.ft-ul li.active span{
+	color: #018172;
+
+}
+ 
+.ft-ul li i{
+
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	margin: 0 auto;
+	margin-bottom: -0.8rem;
+ 
+}
+.ft-ul li span{
+	color: #999;
+	 
+}
+.ft-ul li:nth-child(1) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_4-1.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(2) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_2.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(3) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_1.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(4) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_1.png');
+    background-size: cover;
+}
+.ft-ul li:nth-child(5) i{
+	background: url('../img/icon_955p3ntfd47/San-Mi-App-icon-fill_3.png');
+    background-size: cover;
+}
