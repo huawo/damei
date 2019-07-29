@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础建设</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+	<div class="cl_cstr_head" style="height: 165px;">
+		<cl-head></cl-head>
+	</div>
+</header>
+<main>
+	<div class="cstr_banner">
+	</div>
+
+	<div class="cstr_pic">
+		<div class="cstr_pic_a">
+			<div class="cstr_btn_a">
+				<a href="">申请加入色彩基地</a>
+			</div>
+			<div class="cstr_btn_b">
+				<a href="">在线参加色彩浙江</a>
+			</div>
+			<div class="cstr_fs"></div>
+			
+		</div>
+		<div class="cstr_pic_b">
+			<piclist></piclist>
+			<div class="cstr_banner_a">
+				<img src="" alt="">
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="cstr_pic_bottom">
+		<div class="cstr_pic_c">
+			<div class='cstr_list_top'>
+				<p>基地介绍</p>
+			</div>
+			<div>
+				<p>asd</p>
+			</div>
+		</div>
+		<div class="cstr_pic_d">
+			<div class='cstr_list_top'>
+				<p>基地名录</p>
+			</div>
+			<div>
+				<p>asd</p>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+<footer>
+	<div class="cl_cstr_foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>	
+</body>
+
+
+<script>
+$(function(){
+	new Vue({
+		el:'.cl_cstr_head'
+	});
+	new Vue({
+		el:'.cl_cstr_foot'
+	});
+
+	new Vue({
+		el:".cstr_pic_b"
+	})
+
+})
+</script>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>协会视频</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: flex;flex-wrap:wrap;">
+<header  style="height: 165px;">
+	<div class="cl_signup-index_head" >
+		<cl-head></cl-head>
+	</div>	
+</header>
+
+<main>
+	<div class="video_container">
+		<div class="video_card">
+			<a href="video_info.html">
+				<div class="video_card_img"><img src="imgs/1.jpg" alt=""></div>
+				<div class="video_card_content">
+					<p>协会视频</p>
+					<span>2019-07-27</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="video_card">
+			<a href="video_info.html">
+				<div class="video_card_img"><img src="imgs/1.jpg" alt=""></div>
+				<div class="video_card_content">
+					<p>协会视频</p>
+					<span>2019-07-27</span>
+				</div>
+			</a>
+		</div>
+		<div class="video_card">
+			<a href="video_info.html">
+				<div class="video_card_img"><img src="imgs/1.jpg" alt=""></div>
+				<div class="video_card_content">
+					<p>协会视频</p>
+					<span>2019-07-27</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="video_card">
+			<a href="video_info.html">
+				<div class="video_card_img"><img src="imgs/1.jpg" alt=""></div>
+				<div class="video_card_content">
+					<p>协会视频</p>
+					<span>2019-07-27</span>
+				</div>
+			</a>
+		</div>
+		<div class="video_card">
+			<a href="video_info.html">
+				<div class="video_card_img"><img src="imgs/1.jpg" alt=""></div>
+				<div class="video_card_content">
+					<p>协会视频</p>
+					<span>2019-07-27</span>
+				</div>
+			</a>
+		</div>
+		
+		<div class="video_card">
+			<a href="video_info.html">
+				<div class="video_card_img"><img src="imgs/1.jpg" alt=""></div>
+				<div class="video_card_content">
+					<p>协会视频</p>
+					<span>2019-07-27</span>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+ 
+<footer>
+	<div class="signup_index_foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>
+<script>
+//del
+$(".video_card").hover(function(){
+	// $(".video_card").find("p").removeClass("change");
+	$(this).find("p").addClass("change") 
+},function(){
+	$(".video_card").find("p").removeClass("change");
+})
+
+
+$(function(){
+	new Vue({
+		el:".cl_signup-index_head"
+	});
+	new Vue({
+		el:".signup_index_foot"
+	});
+ 
+
+})
+
+</script>	
+</body>
+</html>

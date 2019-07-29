@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浙江省流行色协会</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+
+	<script src="js/publicFooter.js"></script>
+
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+
+	<!-- component -->
+	<div class="cl_index_head"  style="height: 165px;">
+		<cl-head></cl-head>
+	</div>|
+	
+	
+
+	<!-- 轮播 -->
+	<div class="cl_banner">
+ 
+	</div>
+</header>	
+<main class="main">
+<!-- 	<div class="clm_card">
+		<card></card>
+		<card></card>
+		<card></card>
+	</div> -->
+
+	<div class="clm_section">
+		<div class="l_section">
+			<div  class="l_top">
+				<div class="clm_btn">
+				<a href="signup-index.html">在线申请入会</a>
+				</div>
+				<div class="clm_btn">
+					<a href="">申请加入色彩基地</a>
+				</div>
+				<div class="clm_btn">
+					<a href="search_zs.html">色彩搭配师证书查询</a>
+				</div>
+					
+			</div>
+			
+			<div class="l_bottom">
+				<list></list>
+			</div>
+		</div>		
+		<div class="r_section"></div>
+
+
+	</div> 
+	<!--  -->
+<!-- 	<div class="clo_banner">
+		<a href="">
+			<img src="" alt="">
+		</a>
+	</div> -->
+	<!--  -->
+<!-- 	<div class="clmt_card">
+		<card></card>
+		<card></card>
+		<card></card>
+		<card></card>
+		
+	</div> -->
+	<!-- 图文列表 -->
+
+
+	<div class="pic_left">
+		<div class="pic_a_lists list">
+			<piclist></piclist>
+
+		</div>
+		<div class="pic_b_lists list">
+			<piclist></piclist>
+		 
+		</div>
+
+		<!-- <div class="clt_banner">
+			<a href=""> 
+				<img src="" alt="">
+			</a>
+		</div> -->
+
+		<div class="pic_c_lists list">
+			<piclist></piclist>
+
+		</div>
+		<div class="pic_d_lists list">
+			<piclist></piclist>
+		 
+		</div>
+			
+	</div>
+	<div class="pic_right">
+		<div class="pic_botton">
+			<div class="pic_btn">
+				<a href="">考试系统</a>
+			</div>
+			<div class="pic_btn">
+				<a href="">流行色色彩调查</a>
+			</div>
+			<div class="pic_btn">
+				<a href="">时尚色彩杂志</a>
+			</div>
+
+			<div class="sina">
+				<p>色彩微博</p>
+				<img src="" alt="">
+			</div>
+
+
+			<div class="pic_info">
+				<div class="list_top">
+					<p>asd</p>
+					<span>更多>></span>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 
+	<div class="clth_banner">
+		<img src="" alt="">
+	</div> -->
+
+	<div class="pic_bt">
+		<div class="new_bt">
+			<div>
+				<p>浙江省流行色协会分支机构</p>
+				<span>更多>></span>
+			</div>
+			<button><a href="">宁波时尚色彩分会</a></button>
+		</div>		 
+		<div class="new_bt">
+			<div>
+				<p>浙江省流行色协会高校代表处</p>
+				<span>更多>></span>
+			</div>
+			<button><a href="">理工大学</a></button>
+		</div>		
+		<div class="new_bt">
+			<div>
+				<p>在线咨询</p>
+				<span>更多>></span>
+			</div>
+			<button style="background: #b71c24"><a href="">在线咨询</a></button>
+		</div>		 
+	</div>
+	
+ 
+
+</main>
+
+<footer>
+	 <div class="cl_index_foot">
+		<cl-foot></cl-foot>	
+	 </div>
+
+</footer>
+
+ 	
+<script src="js/index.js"></script>
+
+<script src="js/publicHeader.js"></script>
+
+<script>
+ 
+ $(function(){
+ 	 //创建一个头部组件
+	let clHead=new Vue({
+	 	el:".cl_index_head",
+ 	}); 
+
+new Vue({
+	el:".clm_card",
+
+});
+new Vue({
+	el:".pic_a_lists"
+})
+new Vue({
+	el:".pic_b_lists"
+})
+new Vue({
+	el:".pic_c_lists"
+})
+new Vue({
+	el:".pic_d_lists"
+})
+ 
+
+
+ new Vue({
+ 	el:".l_bottom"
+ })
+
+
+
+ new Vue({
+ 	el:".clmt_card"
+ })
+
+
+
+ let clFoot=new Vue({
+
+	el:".cl_index_foot"
+})
+
+
+
+
+ })
+</script>
+</body>
+</html>

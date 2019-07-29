@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: flex;flex-wrap:wrap;">
+<header  style="height: 165px; ">
+	<div class="cl_signup-index_head" >
+		<cl-head></cl-head>
+	</div>	
+</header>
+
+<div class="signup-index-main main">
+	<h3>浙江省流行色协会会员服务条例</h3>
+	<p style="height: 600px;">
+		字数补丁
+		<br>
+		<br>
+	</p>
+	<div>
+		<button><a href="su_personal.html">申请个人会员</a></button>
+		<button><a href="su_stu.html">申请学生会员</a></button>
+		<button><a href="su_team.html">申请团体会员</a></button>
+		<button><a href="su_ls.html">申请理事会员</a></button>
+
+	</div>
+</div>	
+<footer>
+	<div class="signup_index_foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>
+<script>
+$(function(){
+	new Vue({
+		el:".cl_signup-index_head"
+	});
+	new Vue({
+		el:".signup_index_foot"
+	});
+
+
+
+
+})
+
+</script>	
+</body>
+</html>

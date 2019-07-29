@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>国际交流</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+	<div class="cl_forum_head" style="height: 165px;">
+		<cl-head></cl-head>
+	</div>
+</header>
+<main  >
+	<div class="cl_forum_banner">
+		
+	</div>
+	<div class="for_pic">
+		<div class="for_pic_a">
+			<piclist></piclist>
+		</div>
+		<div class="for_pic_b">
+			<piclist></piclist>
+		</div>
+	</div>
+	
+
+	<div class="for_banner_bar">
+		<div class="bn_bar_a">
+			<img src="" alt="">
+		</div>
+		<div class="bn_bar_b">
+			<img src="" alt="">
+		</div>
+	</div>
+
+	<div class="for_pic_bottom">
+		<div class="for_pic_c for_list">
+			<piclist></piclist>
+		</div>
+		<div class="for_pic_d for_list">
+			<piclist></piclist>
+		</div>
+		<div class="for_pic_e for_list">
+			<piclist></piclist>
+		</div>
+	</div>
+
+	<div class="for_friend">
+		<div class="for_list_top">
+			<p>合作机构</p>
+		</div>
+		<ul>
+			<li>asd</li>
+		</ul>
+	</div>
+</main>	
+<footer>
+	<div class="cl_forum_foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>
+
+
+
+<script>
+	
+$(function(){
+	new Vue({
+		el:".cl_forum_head"
+	});
+	new Vue({
+		el:".cl_forum_foot"
+	});
+
+	//图文
+	new Vue({
+		el:".for_pic_a"
+	});
+	new Vue({
+		el:".for_pic_b"
+	});
+	new Vue({
+		el:".for_pic_c"
+	});
+	new Vue({
+		el:".for_pic_d"
+	});
+	new Vue({
+		el:".for_pic_e"
+	})
+
+
+
+})
+	
+</script>
+
+</body>
+</html>

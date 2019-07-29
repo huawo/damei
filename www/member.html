@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员空间</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+	<div class="cl_member_head" style="height:165px;">
+		<cl-head></cl-head>
+	</div>
+</header>	
+<main>
+	<div class="mber_banner">
+		
+	</div>
+
+	<div class="mber_pic_top">
+		<div class="mber_pic_a mber_list">
+			<div class="mber_list_top">
+				<p>会员专区</p>
+			</div>
+			<div class="mber_list_all">
+				<div><a href="">协会章程</a></div>
+				<div><a href="">个案服务</a></div>
+				<div><a href="">入会流程</a></div>
+				<div><a href="">缴费说明</a></div>
+				<div><a href="">会员之声</a></div>
+				<div><a href="">联系我们</a></div>
+				<div><a href="">各类会员服务条例</a></div>
+				
+			</div>
+			<div class="mber_btn">
+				<a href="">在线申请入会</a>
+			</div>
+		</div>
+		<div class="mber_pic_b mber_list">
+			<list v-bind:list_title="title"></list>
+		</div>
+		<div class="mber_pic_c mber_list">
+			<img src="" alt="">
+		</div>
+		
+	</div>
+
+	<div class="mber_bn_a">
+		<img src="" alt="">
+	</div>
+
+	<div class="mber_pic_bottom">
+		<div class="mber_pic_d mber_list">
+			<list></list>
+		</div>
+		<div class="mber_pic_e mber_list">
+			<list></list>
+		</div>
+		<div class="mber_pic_f mber_list">
+			<list></list>
+		</div>
+	</div>
+
+
+
+	<div class="mber_bn_b">
+		<img src="" alt="">
+	</div>
+</main>
+
+<footer>
+	<div class="cl_member_foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>
+<script>
+$(function(){
+	new Vue({
+		el:".cl_member_head"
+	})
+	new Vue({
+		el:".cl_member_foot"
+	})
+
+	new Vue({
+		el:".mber_pic_b",
+		data:{
+			title:"企业新闻"
+
+		}
+	});
+	new Vue({
+		el:".mber_pic_d",
+		data:{
+			title:"产品展示"
+
+		}
+	});
+	new Vue({
+		el:".mber_pic_e",
+		data:{
+			title:"品牌会员"
+
+		}
+	});
+	new Vue({
+		el:".mber_pic_f",
+		data:{
+			title:"会员公告"
+
+		}
+	});
+
+})
+</script>	
+</body>
+</html>

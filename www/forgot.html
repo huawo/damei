@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>找回密码</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: flex;flex-wrap:wrap;overflow:hidden">
+<header  style="height: 165px; ">
+	<div class="cl_forgot_head" >
+		<cl-head></cl-head>
+	</div>
+	
+</header>
+<div class="forgot_main">
+	<form action="" class="forgot_form">
+		<input type="text" placeholder="用户名/手机号">
+		<input type="password" placeholder="验证码">
+	 
+		<div class="forgot_btn">
+			<button class="forgot_in">提&nbsp交</button>
+			 
+		</div>
+		
+	</form>
+
+
+	<div class="forgot_info">
+	<span>版权所有：浙江省流行色协会  盗版必究   地址：杭州市拱墅区祥园路99号运河广告产业大厦2号楼602A</span>
+	<span>Tel:0571-88272932   Fax:0571-28822802  常年法律顾问：林律师</span>
+</div>
+</div>
+
+<script>
+$(function(){
+	new Vue({
+		el:".cl_forgot_head"
+	})
+
+})
+</script>	
+</body>
+</html>

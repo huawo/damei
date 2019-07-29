@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: flex;flex-wrap:wrap;overflow:hidden">
+<header  style="height: 165px; ">
+	<div class="cl_signup_head" >
+		<cl-head></cl-head>
+	</div>
+	
+</header>
+<div class="signup_main">
+	<form action="" class="signup_form">
+		<input type="text" placeholder='手机号'>
+		<div class="signup_get_nber">
+			<input type="text" placeholder="验证码">
+			<button>获取验证码</button>
+		</div>
+		<input type="text" placeholder="用户名">
+		<input type="password" placeholder="密码">
+		<p class='signup_ckbox'>
+			<input type="checkbox">
+			已阅读并同意<a href="">《用户使用协议》</a>
+		</p>
+		<div class="signup_btn">
+			<button class='signup_up'>注&nbsp册</button>
+		</div>
+		
+	</form>
+
+
+	<div class="signup_info">
+	<span>版权所有：浙江省流行色协会  盗版必究   地址：杭州市拱墅区祥园路99号运河广告产业大厦2号楼602A</span>
+	<span>Tel:0571-88272932   Fax:0571-28822802  常年法律顾问：林律师</span>
+</div>
+</div>
+
+<script>
+$(function(){
+	new Vue({
+		el:".cl_signup_head"
+	})
+
+})
+</script>	
+</body>
+</html>

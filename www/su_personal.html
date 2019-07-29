@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: flex;flex-wrap:wrap;overflow:hidden">
+<header  style="height: 165px;  ">
+	<div class="cl_signup-stu_head" >
+		<cl-head></cl-head>
+	</div>
+	
+</header>
+<div class="signup-stu_main">
+
+<form action="" id="signup-stu-form">
+	<h3>填写注册个人会员表单</h3>
+	<div class="form-group">
+		<label for="">姓名：</label>
+		<input type="text" class="huas" ref="name" placeholder="请输入您的真实姓名" 
+		v-model="name"
+		:class="{caveat:isName}"
+		>
+
+		<span>{{msgname}}</span>
+		
+	</div>
+	<div class="form-group">
+		<label for="">手机：</label>
+		<input type="text" ref="phone" placeholder="11位手机号" @change="yzphone()" 
+		v-model="phone"
+		:class="{caveat:isPhone}" >
+		<span>{{msgphone}}</span>
+	</div>
+	<div class="form-group">
+		<label for="">邮箱：</label>
+		<input type="text" ref="email" placeholder="常用邮箱" 
+		v-model="email"
+		:class="{caveat:isEmail}"
+		>
+		<span>{{msgemail}}</span>
+	</div>
+
+	<div class="form-group">
+		<label for="">地址：</label>
+		<input type="text" ref="address" placeholder="请输入邮寄地址" 
+		v-model="address"
+		:class="{caveat:isAddress}"
+		>
+		<span>{{msgaddress}}</span>
+	</div>
+	<div class="form-group">
+		<label for="">性别：</label>
+
+		<input type="radio" name="gender" style="width: 20px">男
+		<input type="radio" name="gender" style="width: 20px;margin-left: 30px">女
+	</div>
+	<div class="form-group">
+		<label for="">出生日期：</label>
+		<input type="date">
+	</div>
+	<div class="form-group">
+		<label for="">政治面貌：</label>
+		<select name="" id="">
+			<option disabled="disabled" selected="selected">请选择</option>
+			<option value="">中共党员</option>
+			<option value="">共青团员</option>
+			<option value="">群众</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="">学历：</label>
+		<input type="text" placeholder="学历">
+	</div>
+	
+	<div class="form-group">
+		<label for="">所属行业：</label>
+		<input type="text" placeholder="请输入您的从事行业">
+	</div>
+	<div class="form-group">
+		<label for="">单位名称：</label>
+		<input type="text" placeholder="请输入您的单位名称">
+	</div>
+	
+	<div class="form-group">
+		<label for="">验证码：</label>
+		<input type="text" placeholder="右侧的验证码">
+	</div>
+	<div class="form-group">
+		<label for="">申请：</label>
+		<input type="checkbox" style="width: 20px;">
+		加入浙江省流行色协会色彩人才库
+	</div>
+ 
+
+
+	<button @click.prevent="stusubmit()">申请入会</button>
+</form>	
+
+
+</div>
+
+ 
+
+ 
+<script>
+var form=new Vue({
+	el:"#signup-stu-form",
+	data:{
+		name:"",
+		msgname:"*",
+		gender:"",
+		date:"",
+		zz:"",
+		edu:"",
+		phone:"",
+		msgphone:"*",
+		email:"",
+		msgemail:"*",
+		address:"",
+		msgaddress:"*",
+		isName:false,		
+		isPhone:false,
+		isEmail:false,
+		isAddress:false,
+	},
+	methods:{
+		yzphone:function(){
+			
+			 console.log(this.phone.toString().length);
+			if(this.phone.toString().length!==11){
+				this.isPhone=true;
+				this.msgphone="请输入正确的手机号"
+			}else{
+				this.msgphone=""
+				this.isPhone=false;
+			}
+		},
+		stusubmit:function(event){
+
+ 			if (this.name.length==0){
+ 				this.isName=true;
+ 				this.msgname="用户名不能为空"
+ 			}else{
+ 				this.isName=false;
+ 			};
+
+ 			if (this.phone.length!==11){
+ 				this.isPhone=true;
+ 				this.msgphone="请输入正确的手机号"
+ 			}else{
+ 				this.isPhone=false;
+ 			};
+
+ 			if (this.email.length==0){
+ 				this.isEmail=true;
+ 				this.msgemail="请输入常用邮箱"
+ 			}else{
+ 				this.isEmail=false;
+ 			};
+
+ 			if (this.address.length==0){
+ 				this.isAddress=true;
+ 				this.msgaddress="请输入联系地址"
+ 			}else{
+ 				this.isAddress=false;
+ 			};
+
+
+
+		}
+	}
+})
+
+ 
+
+$(function(){
+	new Vue({
+		el:".cl_signup-stu_head"
+	});
+
+	
+
+	
+})
+
+
+
+</script>		
+</body>
+</html>

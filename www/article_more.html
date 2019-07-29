@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浙江省流行色协会</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+	<!-- component -->
+	<div class="article_more_head"  style="height: 165px;">
+		<cl-head></cl-head>
+	</div>|
+	
+	<div class="article_more_banner"></div> 
+</header>
+
+<main>
+	<div class="article_wrapper">
+		<div class="article_list">
+			<ul>
+				<li>
+					<p>字数补丁</p>
+					<span>2019-1-20</span>
+				</li>
+				<li>
+					<p>字数补丁</p>
+					<span>2019-1-20</span>
+				</li>
+				<li>
+					<p>字数补丁</p>
+					<span>2019-1-20</span>
+				</li>
+			</ul>
+		</div>
+		<div class="article_side">
+			<side></side>
+		</div>
+
+	</div>
+</main>	
+<footer>
+	<div class="article_more_foot">
+		<cl-foot></cl-foot>	
+	</div>
+</footer>
+<script>
+$(function(){
+	new Vue({
+		el:".article_more_head"
+	})
+	new Vue({
+		el:".article_side"
+	})
+	new Vue({
+		el:".article_more_foot"
+	})
+	var list="";
+	for (var i = 1;i <10 ;i++) {
+
+		list+=`
+			<li>${i}</li>
+		`
+	};
+	$(".list").html(list)
+
+})
+</script>
+	
+</body>
+</html>

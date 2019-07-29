@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>国际论坛</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+	<div class="cl_um_head" style="height:165px;">
+		<cl-head></cl-head>
+	</div>	
+</header>
+<main>
+	<div class="cl_um_banner">
+		
+	</div>
+	<div class="um_pic_top">
+		<div class="um_pic_a">
+			<piclist></piclist>
+			
+		</div>
+		<div class="um_pic_b">
+			<piclist></piclist>
+			
+		</div>
+	</div>
+	<div class="um_banner_bar">
+		<div class="um_banner_a">
+			<img src="" alt="">
+		</div>
+		<div class="um_banner_b">
+			<img src="" alt="">
+		</div>
+	</div>
+
+	<div class="um_pic_bottom">
+		<div class="um_pic_c um_list">
+			<piclist></piclist>
+			
+		</div>
+		<div class="um_pic_d um_list">
+			<piclist></piclist>
+			
+		</div>
+		<div class="um_pic_e um_list">
+			<piclist></piclist>
+			
+		</div>
+		
+	</div>
+
+	<div class="um_banner_bar">
+		<div class="um_banner_c">
+			<img src="" alt="">
+		</div>
+	</div>
+</main>	
+
+<footer>
+	<div class="cl_um_foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>
+<script>
+	$(function(){
+		new Vue({
+			el:".cl_um_head"
+		});
+		new Vue({
+			el:".um_pic_a"
+		});
+		new Vue({
+			el:".um_pic_b"
+		});
+		new Vue({
+			el:".um_pic_c"
+		});
+		new Vue({
+			el:".um_pic_d"
+		});
+		new Vue({
+			el:".um_pic_e"
+		});
+
+		new Vue({
+			el:".cl_um_foot"
+		});
+	 
+	 
+
+
+
+
+	})
+</script>
+</body>
+</html>

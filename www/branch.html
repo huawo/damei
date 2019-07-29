@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分会</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<script src="js/index.js"></script>	
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: flex;flex-wrap:wrap;">
+<header  style="height: 165px;">
+	<div class="branch_head" >
+		<cl-head></cl-head>
+	</div>	
+
+
+</header>
+
+<main>
+	<div class="top_banner">
+		<img src="imgs/article_banner.png" alt="">
+	</div>
+	<div class="branch_main">
+		<div class="branch_con">
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+			<div><button>浙江省流行色协会织里童装分会</button></div>
+
+		</div>
+		<div class="side">
+			<side></side>
+			<br>
+			<side></side>
+		</div>
+	</div>
+	
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+ 
+<footer>
+	<div class="branch_foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>
+<script>
+
+
+ 
+
+
+$(function(){
+	new Vue({
+		el:".branch_head"
+	});
+	new Vue({
+		el:".branch_foot"
+	});
+	new Vue({
+		el:".side"
+	}) 
+
+	var list="";
+	for (var i = 1;i <10 ;i++) {
+
+		list+=`
+			<li>${i}</li>
+		`
+	};
+	$(".list").html(list)
+
+
+
+
+})
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: flex;flex-wrap:wrap;overflow:hidden">
+<header  style="height: 165px;margin:0">
+	<div class="cl_login_head" >
+		<cl-head></cl-head>
+	</div>
+	
+</header>
+<div class="login_main">
+	<form action="" class="login_form">
+		<input type="text" placeholder="用户名/手机号">
+		<input type="password" placeholder="密码">
+		<span><a href="forgot.html">忘记密码&nbsp？</a></span>
+		<div class="login_btn">
+			<button class="login_in">登&nbsp录</button>
+			<button class='login_up'>注&nbsp册</button>
+		</div>
+		
+	</form>
+
+
+	<div class="login_info">
+	<span>版权所有：浙江省流行色协会  盗版必究   地址：杭州市拱墅区祥园路99号运河广告产业大厦2号楼602A</span>
+	<span>Tel:0571-88272932   Fax:0571-28822802  常年法律顾问：林律师</span>
+</div>
+</div>
+
+<script>
+$(function(){
+	new Vue({
+		el:".cl_login_head"
+	});
+	$(".login_up").on("click",function(){
+		event.preventDefault();
+		window.location.href="signup.html";
+
+
+	})
+
+})
+</script>	
+</body>
+</html>

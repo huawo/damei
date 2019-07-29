@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>协会介绍</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/publicHeader.js"></script>
+	<script src="js/publicFooter.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+	<div class="cl_aboutus_head"  style="height: 165px;">
+		<cl-head></cl-head>
+	</div>
+</header>
+<main class="ab_main">
+	<div class="cl_ab_banner"></div>
+	<div class="ab_msg">
+		<div class="ab_msg_section">
+			<h3>浙江省流行色协会</h3>
+			<p>adsasd</p>
+						
+		</div>
+		<div class="ab_msg_cards">
+			<div class="msg_card">
+				<img src="" alt="" width="100%" height="240px;">
+				<span>-&nbsp协会动态&nbsp-</span>
+				<ul>
+					<li><a href="">asd</a></li>
+					<li><a href="">asd</a></li>
+					<li><a href="">asd</a></li>
+				</ul>
+
+			</div>
+			<div class="msg_card" @click="tz()" >
+				<img src="" alt="" width="100%" height="240px;">
+				<span>-&nbsp协会视频&nbsp-</span>
+				<ul>
+					<li><a href="">asd</a></li>
+					<li><a href="">asd</a></li>
+					<li><a href="">asd</a></li>
+				</ul>
+			</div>
+			<div class="msg_card">
+				<img src="" alt="" width="100%" height="240px;">
+				<span>-&nbsp专业活动&nbsp-</span>
+				<ul>
+					<li><a href="">asd</a></li>
+					<li><a href="">asd</a></li>
+					<li><a href="">asd</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="ab_msg_join">
+		<h3>专业委员会</h3>
+		<select>
+			<option value="">色彩教育专业委员会</option>
+			<option value="">色彩趋势研究专业委会员</option>
+			<option value="">建筑与环境色彩研究专业委员会</option>
+			<option value="">拼布色彩与艺术研究专业委员会</option>
+		</select>
+		<button class="msg_btn">在线申请加入</button>
+	</div>
+	
+</main>
+
+
+
+<footer>
+	
+	<div class="cl_aboutus-foot">
+		<cl-foot></cl-foot>
+	</div>
+</footer>
+	
+</body>
+<script>
+$(function(){
+	 //创建一个头部组件
+	let clHead=new Vue({
+		el:".cl_aboutus_head",
+
+
+	});
+
+	let clFoot=new Vue({
+
+		el:".cl_aboutus-foot"
+	});
+
+	new Vue({
+		el:".ab_msg_cards",
+		methods:{
+			tz:function(){
+				window.location.href="video.html"
+			}
+
+		}
+
+	})
+	
+})
+
+
+
+</script>
+</html>
